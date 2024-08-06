@@ -42,12 +42,10 @@ Componente tecnológico
     
 Instalacion:
 
-    Clone the Repository:
+    Clone el Repositorio:
 
-    bash
-
-git clone https://github.com/yourusername/PetLand.git
-cd PetLand
+    git clone https://github.com/yourusername/PetLand.git
+    cd PetLand
 
 Agradecemos las contribuciones para mejorar PetLand. Para contribuir:
 
