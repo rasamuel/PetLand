@@ -8,7 +8,6 @@ Bienvenido a PetLand, una completa aplicación web diseñada para digitalizar la
 - [Visión general del proyecto]
 - [Características]
 - [Instalación]
-- [Contribución]
 - [Licencia]
 - [Contacto]
 
@@ -47,17 +46,7 @@ Instalacion:
 
     git clone https://github.com/yourusername/PetLand.git
     cd PetLand
-
-Agradecemos las contribuciones para mejorar PetLand. Para contribuir:
-
-    Haga Fork el repositorio.
-    Cree una nueva rama con un nombre descriptivo.
-    Haga sus cambios y envíelos.
-    Empuje sus cambios a su rama.
-    Abra un pull request al repositorio principal.
-
-Por favor, asegúrese de que su código sigue los estándares de codificación del proyecto e incluye las pruebas apropiadas.
-
+    
 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT.
