@@ -1,5 +1,5 @@
 # PetLand
-[![quitar-Letras-1.jpg](https://i.postimg.cc/59XD5wMS/quitar-Letras-1.jpg)](https://postimg.cc/HjCSd8nr)
+[![quitar-Letras-1-removebg-preview.png](https://i.postimg.cc/7600Ds2N/quitar-Letras-1-removebg-preview.png)](https://postimg.cc/G83HxjzB)
 
 Bienvenido a PetLand, una completa aplicación web diseñada para digitalizar las clínicas veterinarias. Nuestro objetivo es mejorar la gestión y el cuidado de las mascotas a través de una plataforma fácil de usar que conecta a los propietarios de mascotas, veterinarios y administradores sin problemas.
 
