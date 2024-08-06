@@ -56,9 +56,11 @@ Agradecemos las contribuciones para mejorar PetLand. Para contribuir:
     Abra un pull request al repositorio principal.
 
 Por favor, asegúrese de que su código sigue los estándares de codificación del proyecto e incluye las pruebas apropiadas.
+
 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT.
+
 Contacto
 
 Para cualquier pregunta o sugerencia, no dude en ponerse en contacto con nosotros:
