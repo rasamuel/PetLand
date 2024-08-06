@@ -362,3 +362,49 @@ footer {
   max-width: 1200px; /* Ancho máximo del contenedor principal */
   margin: 0 auto; /* Centra el contenedor principal */
 }
+
+/* Nuevos estilos para la sección "Nuestros Servicios" */
+.container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.services {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.service-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #133840;
+  width: 200px;
+}
+
+.menu-item {
+  padding: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.menu-item.active {
+  background-color: #0A2126;
+}
+
+.content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  flex: 1;
+}
+
+#service-description {
+  margin: 0;
+}
