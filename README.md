@@ -1,5 +1,6 @@
 # PetLand
-[![quitar-Letras-1.jpg](https://i.postimg.cc/59XD5wMS/quitar-Letras-1.jpg)](https://postimg.cc/HjCSd8nr)
+
+[![quitar-Letras-1.jpg](https://i.postimg.cc/SQ5RV7YS/quitar-Letras-1.jpg)](https://postimg.cc/QVQjd7qw)
 
 Bienvenido a PetLand, una completa aplicación web diseñada para digitalizar las clínicas veterinarias. Nuestro objetivo es mejorar la gestión y el cuidado de las mascotas a través de una plataforma fácil de usar que conecta a los propietarios de mascotas, veterinarios y administradores sin problemas.
 
@@ -7,7 +8,6 @@ Bienvenido a PetLand, una completa aplicación web diseñada para digitalizar la
 - [Visión general del proyecto]
 - [Características]
 - [Instalación]
-- [Contribución]
 - [Licencia]
 - [Contacto]
 
@@ -46,17 +46,7 @@ Instalacion:
 
     git clone https://github.com/yourusername/PetLand.git
     cd PetLand
-
-Agradecemos las contribuciones para mejorar PetLand. Para contribuir:
-
-    Haga Fork el repositorio.
-    Cree una nueva rama con un nombre descriptivo.
-    Haga sus cambios y envíelos.
-    Empuje sus cambios a su rama.
-    Abra un pull request al repositorio principal.
-
-Por favor, asegúrese de que su código sigue los estándares de codificación del proyecto e incluye las pruebas apropiadas.
-
+    
 Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT.
