@@ -1,96 +1,9 @@
 body {
-  font-size: x-large;
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #D9D4C5;
 }
 
-.navbar {
-  background-color: #A6A68B;
-  padding: 10px 20px;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img {
-  height: 40px;
-}
-
-.menu {
-  display: flex;
-  gap: 20px;
-  flex-grow: 2;
-  justify-content: right; /* Ajustar al centro horizontalmente */
-  margin-right: 10px; 
-}
-
-.menu a {
-  text-decoration: none;
-  color: #002B2B;
-  font-size: 16px;
-}
-
-.menu a:hover {
-  color: #000000;
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.auth-buttons a {
-  text-decoration: none;
-  color: #002B2B;
-  padding: 5px 10px;
-  border: 1px solid #002B2B;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.auth-buttons .login-button {
-  background-color: transparent;
-}
-
-.auth-buttons .register-button {
-  background-color: #002B2B;
-  color: #FFFFFF;
-}
-
-.auth-buttons a:hover {
-  opacity: 0.8;
-}
-
-.hero-section {
-  position: relative;
-  height: 450px;
-  background: url('https://media.perezlara.com/2020/02/4-Tips-mascotas-felices.png') no-repeat center center/cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin: 0 0 20px;
-}
 
 .servicios-veterinarios {
   margin-left: 20px;
@@ -197,7 +110,7 @@ div.desc {
 
 /* Estilo del footer */
 footer {
-  background-color: #133840; /* Color de fondo */
+  background-color: #333; /* Color de fondo */
   color: #fff; /* Color del texto */
   padding: 20px 0;
   text-align: center;
@@ -309,7 +222,7 @@ footer {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 200%;
   max-width: 600px;
   margin: 0 auto;
 }
