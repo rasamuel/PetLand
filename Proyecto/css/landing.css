@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -303,7 +304,6 @@ footer {
   color: white;
   cursor: pointer;
 }
-
 .menu-item:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
@@ -320,4 +320,56 @@ footer {
 
 #service-description {
   margin: 0;
+}
+
+
+.services-section {
+  text-align: center;
+  padding: 50px;
+  background-color: #D9D4C5;
+}
+
+.services-section h2 {
+  color: #0A2126;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  color: #0A2126;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-card {
+  background: #A0A68A;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card i {
+  font-size: 40px;
+  color: #D9D4C5;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #133840;
 }
