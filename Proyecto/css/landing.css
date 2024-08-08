@@ -624,3 +624,26 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .accordion-button {
   font-size: 20px;
 }
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la legibilidad */
+  padding: 10px;
+  border-radius: 15px; /* Redondeo de esquinas */
+}
+
+.caption-container {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 15px; /* Redondeo de esquinas */
+}
+
+.caption-container h3 {
+  margin: 0;
+  font-size: 24px; /* Tamaño del encabezado */
+  color: #ccc; /* Color del encabezado */
+}
