@@ -154,6 +154,8 @@ div.desc {
 }
 
 .faq {
+  flex: 1; /* Ambos elementos toman el mismo ancho */
+  margin-left: 20px;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -217,6 +219,8 @@ div.desc {
   clear: both; /* Asegura que cada elemento esté en una nueva línea */
 }
 .formulario{
+    flex: 1; /* Ambos elementos toman el mismo ancho */
+    margin-right: 20px;
     float: none; /* Evita que los elementos floten uno al lado del otro */
     clear: both; /* Asegura que cada elemento esté en una nueva línea */
 }
@@ -274,12 +278,10 @@ div.desc {
 
 .main-container {
   display: flex; /* Asegúrate de que los elementos hijos se alineen en fila */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+  justify-content: space-between; /* Centra los elementos horizontalmente */
   gap: 10px; /* Espacio entre los dos contenedores */
   max-width: 1200px; /* Ancho máximo del contenedor principal */
   margin: 0 auto; /* Centra el contenedor principal */
-  
 }
 
 /* Nuevos estilos para la sección "Nuestros Servicios" */
