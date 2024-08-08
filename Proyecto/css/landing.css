@@ -413,89 +413,71 @@ div.desc {
   height: auto;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
-.footer #button{
-	width:35px;
-	height:35px;
-	border: #A0A68A 12px solid;
-	border-radius:35px;
-	margin:0 auto;
-	position:relative;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-}
-.footer #button:hover{
-	width:35px;
-	height:35px;
-	border: #A0A68A 12px solid;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-	position:relative;
-}
 .footer {
-	bottom:0;
-	left:0;
-	position:fixed;
-    width: 100%;
-    height: 2em;
-    overflow:hidden;
-    margin:0 auto;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-	z-index:999;
+  background: #A0A68A; /* Fondo del pie de página */
+  padding: 30px 0;
+  font-family: 'Play', sans-serif;
+  text-align: center; /* Centrar el texto */
+  color: #002B2B; /* Color del texto principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar elementos horizontalmente */
 }
-.footer:hover {
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-	height: 10em;
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0;
+  padding: 0.6% 0;
+  color: #002B2B; /* Color del texto dentro de .row */
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center; /* Centrar elementos en la fila */
+  flex-wrap: wrap; /* Ajustar a múltiples líneas si es necesario */
 }
-.footer #container{
-	margin-top:5px;
-	width:100%;
-  height:100%;
-  position:relative;
-  top:0;
-  left:0;
-	background: #A0A68A;
+
+.footer .row a {
+  text-decoration: none;
+  color: #0A2126; /* Color de los enlaces */
+  transition: 0.5s;
+  margin-left: 10px;
 }
-.footer #cont{
-  position:relative;
-  top:-45px;
-  right:190px;
-	width:150px;
-	height:auto;
-	margin:0 auto;
+
+.footer .row a:hover {
+  color: #fff; /* Color de los enlaces en hover */
 }
-.footer_center{
-	width:500px;
-	float:left;
-  text-align:center;
+
+.footer .row ul {
+  width: 100%;
+  padding: 0;
+  list-style: none; /* Eliminar puntos de la lista */
+  margin: 0;
 }
-.footer h3{
-	font-family: 'Helvetica';
-	font-size: 30px;
-	font-weight: 100;
-	margin-top:70px;
-	margin-left:40px;
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0 30px; /* Espacio entre los elementos de la lista */
 }
-.footer p{
-	font-family: 'Helvetica';
-	font-size: 20px;
-	font-weight: 100;
-	margin-top:70px;
-	margin-left:40px;
+
+.footer .row a i {
+  font-size: 2em; /* Tamaño de los íconos */
+  margin: 0 1%; /* Espacio alrededor de los íconos */
+}
+
+@media (max-width: 720px) {
+  .footer {
+    text-align: left; /* Cambiar alineación en dispositivos pequeños */
+    padding: 5%;
+  }
+  
+  .footer .row ul li {
+    display: block; /* Hacer que los elementos de la lista se apilen verticalmente */
+    margin: 10px 0;
+    text-align: left; /* Alineación del texto en dispositivos pequeños */
+  }
+  
+  .footer .row a i {
+    margin: 0 3%; /* Espacio alrededor de los íconos en dispositivos pequeños */
+  }
 }
 
 .sedes{
@@ -637,4 +619,8 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+.accordion-button {
+  font-size: 20px;
 }

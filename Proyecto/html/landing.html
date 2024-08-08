@@ -14,6 +14,9 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
 </head>
   <body>
     <div class="navbar-container">
@@ -28,16 +31,16 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#carrusel">Inicio <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Quiénes Somos</a>
+                <a class="nav-link" href="#quienes">Quiénes Somos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Servicios</a>
+                <a class="nav-link" href="#servicios">Servicios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Nuestras Sedes</a>
+                <a class="nav-link" href="#sedes">Nuestras Sedes</a>
               </li>
             </ul>
           </div>
@@ -50,7 +53,7 @@
       </nav>
     </div>
   <main class="main">
-    <section class="carrusel">
+    <section class="carrusel" id="carrusel">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -80,7 +83,7 @@
     </section>
     <br>
     <section class="zapote">
-    <section class="about-us">
+    <section class="about-us" id="quienes">
       <h1>Quiénes Somos</h1>
       <img src="..\images\Logo-removebg-preview.png" alt="Logo de la Veterinaria" class="logo">
       <div class="accordion-container">
@@ -125,7 +128,7 @@
     </section>
     </section>
   <hr>
-  <section class="services-section">
+  <section class="services-section" id="servicios">
     <div class="container">
       <div class="content">
           <h2>En PetLand</h2>
@@ -179,7 +182,7 @@
     </div>
   </section>
   <hr>
-  <section class="sedes">
+  <section class="sedes" id="sedes">
     <h2>Nuestras Sedes</h2>
     <p>En PetLand, estamos trabajando para desarrollar la red de clínicas veterinarias más grande de Bogotá.</p>
     <ul class="accordion">
@@ -268,21 +271,21 @@
                 </div>
             </section>
     </section>
+    <br>
     </main>
     <footer>
       <div class="footer">
-        <div id="button"></div>
-      <div id="container">
-      <div id="cont">
-      <div class="footer_center">
-        <p>Copyright © 2024 PetLand Todos los derechos reservados</p>
-      </div>
-      </div>
-      </div>
-      </div>
-        <br>
-        <br>
+        <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        
+        <div class="row">
+        PetLand Copyright © 2024 PetLand - All rights reserved
+        </div>
+        </div>
     </footer>
-
 </body>
 </html>
