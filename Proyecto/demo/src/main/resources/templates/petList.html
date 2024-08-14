@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pet List</h1>
+    </header>
+    <main>
+        <!-- Search Form -->
+        <section class="search-section">
+            <form action="/pets/search" method="get" class="search-form">
+                <input type="text" name="query" placeholder="Search by name or breed" required>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </section>
+        <section class="add-pet-form">
+            <h2>Add New Pet</h2>
+            <form action="/pets/add" method="post" class="pet-form">
+                <label for="nombre">Name:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="raza">Breed:</label>
+                <input type="text" id="raza" name="raza" required>
+                
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" id="imageUrl" name="imageUrl" required>
+                
+                <button type="submit" class="submit-button">Add Pet</button>
+            </form>
+        </section>
+        <!-- Display Pets List -->
+        <section class="pet-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Breed</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="pet : ${pets}">
+                        <td th:text="${pet.id}"></td>
+                        <td th:text="${pet.nombre}"></td>
+                        <td th:text="${pet.raza}"></td>
+                        <td><img th:src="${pet.imageUrl}" alt="Pet Image" style="width:100px; height:auto;"></td>
+                        <td>
+                            <a th:href="@{/pets/{id}(id=${pet.id})}" class="view-button">View</a>
+                            <form th:action="@{/pets/delete/{id}(id=${pet.id})}" method="post" style="display:inline;">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Add Pet Form -->
+
+    </main>
+</body>
+</html>
