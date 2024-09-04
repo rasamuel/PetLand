@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Pet</title>
+    <link rel="stylesheet" href="/css/petEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vet/portal">Portal Veterinario</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a class="boton" href="/pets">Volver</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <h1>Editar Mascota</h1>
+        <p class="form-intro">
+            Antes de actualizar los datos de la mascota, por favor, asegúrate de revisar cada campo con atención. Asegúrate de que la información esté correcta y actualizada para proporcionar el mejor cuidado posible a la mascota.
+        </p>
+        <form th:action="@{/pets/{id}/update(id=${pet.id})}" th:object="${pet}" method="post" class="pet-edit-form">
+            <div class="form-group">
+                <label for="name">
+                    <i class="fas fa-paw"></i> Nombre:
+                </label>
+                <input type="text" id="name" th:field="*{nombre}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="breed">
+                    <i class="fas fa-bone"></i> Raza:
+                </label>
+                <input type="text" id="breed" th:field="*{raza}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">
+                    <i class="fas fa-image"></i> Imagen (URL):
+                </label>
+                <input type="text" id="imageUrl" th:field="*{imageUrl}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age">
+                    <i class="fas fa-calendar-day"></i> Edad:
+                </label>
+                <input type="number" id="age" th:field="*{edad}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="weight">
+                    <i class="fas fa-weight-hanging"></i> Peso:
+                </label>
+                <input type="number" id="weight" th:field="*{peso}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="disease">
+                    <i class="fas fa-syringe"></i> Enfermedad:
+                </label>
+                <input type="text" id="disease" th:field="*{enfermedad}" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="status">
+                    <i class="fas fa-stethoscope"></i> Estado:
+                </label>
+                <input type="text" id="status" th:field="*{estado}" required class="form-control">
+            </div>
+            <button type="submit" class="butons">Actualizar Datos</button>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="">Política de Privacidad</a> | <a href="">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

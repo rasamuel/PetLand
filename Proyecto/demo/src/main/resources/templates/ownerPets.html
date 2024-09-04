@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Mascotas</title>
+    <link rel="stylesheet" href="/css/ownerPets.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a href="/owners/login" class="boton">Cerrar Sesión</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <header>
+            <h1>Bienvenido,</h1>
+            <p>Has iniciado sesión con éxito. Aquí puedes ver toda la información relevante sobre tus mascotas.</p>
+        </header>
+        <section class="pet-list">
+            <h2>Lista de Mascotas</h2>
+            <p>A continuación, se muestra un resumen de todas las mascotas registradas bajo tu cuenta. Puedes revisar los detalles como nombre, raza, edad, peso y cualquier condición médica.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Imagen</th>
+                        <th>Edad</th>
+                        <th>Peso</th>
+                        <th>Enfermedad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="pet : ${pets}">
+                        <td th:text="${pet.id}"></td>
+                        <td th:text="${pet.nombre}"></td>
+                        <td th:text="${pet.raza}"></td>
+                        <td><img th:src="${pet.imageUrl}" alt="Imagen de la Mascota"></td>
+                        <td th:text="${pet.edad} + años"></td>
+                        <td th:text="${pet.peso} + kg"></td>
+                        <td th:text="${pet.enfermedad}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="additional-info">
+            <h2>Consejos para el Cuidado de Mascotas</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-utensils"></i>
+                    <strong>Alimentación Balanceada:</strong> Proporciona una dieta adecuada y equilibrada para mantener la salud de tu mascota.
+                </li>
+                <li>
+                    <i class="fas fa-dog"></i>
+                    <strong>Ejercicio Regular:</strong> Asegúrate de que tu mascota haga ejercicio regularmente para mantener su salud física y mental.
+                </li>
+                <li>
+                    <i class="fas fa-heartbeat"></i>
+                    <strong>Visitas al Veterinario:</strong> Realiza chequeos periódicos con el veterinario para prevenir enfermedades y mantener un buen estado de salud.
+                </li>
+                <li>
+                    <i class="fas fa-shower"></i>
+                    <strong>Higiene y Aseo:</strong> Mantén a tu mascota limpia y bien cuidada, incluyendo el baño regular y el cuidado de sus uñas y dientes.
+                </li>
+                <li>
+                    <i class="fas fa-bed"></i>
+                    <strong>Comodidad y Descanso:</strong> Proporciona un lugar cómodo y seguro para que tu mascota descanse y duerma.
+                </li>
+            </ul>
+        </section>
+        <section class="contact-info">
+            <h2>Contacto</h2>
+            <p>Si necesitas asistencia o tienes alguna pregunta, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte con cualquier consulta relacionada con tus mascotas.</p>
+            <address>
+                <strong>Email:</strong> <a href="mailto:support@petland.com">support@petland.com</a><br>
+                <strong>Teléfono:</strong> <a href="tel:+123456789">+123 456 789</a>
+            </address>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="/privacy-policy">Política de Privacidad</a> | <a href="/terms-of-service">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com/petland" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/petland" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/petland" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
