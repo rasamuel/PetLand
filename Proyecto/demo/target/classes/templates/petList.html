@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Mascotas</title>
+    <link rel="stylesheet" href="/css/petList.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vet/portal">Portal Veterinario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pets/activas">Mascotas Activas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pets/inactivas">Mascotas Inactivas</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a class="boton" href="/pets/add">Registrar Mascota</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <h1>Lista Total de Mascotas</h1>
+        <section class="intro-section">
+            <p>En esta página, puedes encontrar un listado completo de todas las mascotas registrados en el sistema. Si necesitas agregar o editar información, usa los botones correspondientes.</p>
+        </section>
+        <!-- Search Form -->
+        <section class="search-section">
+            <form action="/pets/search" method="get" class="search-form">
+                <input type="text" name="query" placeholder="Buscar por nombre o raza" required>
+                <button type="submit" class="search-button">Buscar</button>
+            </form>
+        </section>
+
+        <!-- Display Pets List -->
+        <section class="pet-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Raza</th>
+                        <th>Imagen</th>
+                        <th>Edad</th>
+                        <th>Peso</th>
+                        <th>Enfermedad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="pet : ${pets}">
+                        <td th:text="${pet.id}"></td>
+                        <td th:text="${pet.nombre}"></td>
+                        <td th:text="${pet.raza}"></td>
+                        <td><img th:src="${pet.imageUrl}" alt="Imagen de la Mascota"></td>
+                        <td th:text="${pet.edad}"></td>
+                        <td th:text="${pet.peso}"></td>
+                        <td th:text="${pet.enfermedad}"></td>
+                        <td th:text="${pet.estado}"></td>
+                        <td class="actions">
+                            <a th:href="@{/pets/{id}(id=${pet.id})}" class="butons">Detalles</a>
+                            <a th:href="@{/pets/{id}/edit(id=${pet.id})}" class="butons">Editar</a>
+                            <form th:action="@{/pets/delete/{id}(id=${pet.id})}" method="post" style="display:inline;">
+                                <button type="submit" class="delete-button">Borrar</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="additional-info">
+            <h2>Información Adicional</h2>
+            <ul>
+                <li><i class="fas fa-info-circle"></i> Asegúrate de revisar los detalles de cada mascota antes de realizar cualquier modificación.</li>
+                <li><i class="fas fa-calendar-alt"></i> Mantén actualizada la información de las mascotas para asegurar su correcto seguimiento.</li>
+                <li><i class="fas fa-user-check"></i> Verifica los registros periódicamente para garantizar que todos los datos sean correctos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="">Política de Privacidad</a> | <a href="">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

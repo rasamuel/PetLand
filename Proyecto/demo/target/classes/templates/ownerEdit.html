@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Dueño</title>
+    <link rel="stylesheet" href="/css/ownerEdit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="Logo">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vet/portal">Portal Veterinario</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a class="boton" href="/owners">Volver</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <section class="tips-section">
+            <h2>Consejos antes de actualizar los datos</h2>
+            <ul>
+                <li>Verifica que toda la información ingresada sea correcta y esté actualizada.</li>
+                <li>Revisa los campos obligatorios antes de guardar los cambios.</li>
+                <li>Si cambias tu número de teléfono, asegúrate de que sea el correcto para futuras comunicaciones.</li>
+                <li>Actualiza tu correo electrónico si es necesario para mantenerte informado sobre notificaciones importantes.</li>
+                <li>Guarda los cambios regularmente para evitar perder información.</li>
+            </ul>
+        </section>
+        <section >
+            <h1>Editar datos del dueño</h1>
+            <form th:action="@{/owners/{id}/update(id=${owner.id})}" th:object="${owner}" method="post">
+                <input type="hidden" th:field="*{id}">
+                <div class="form-group">
+                    <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" required>
+                </div>
+                <div class="form-group">
+                    <label for="cedula"><i class="fas fa-id-card"></i> Cédula:</label>
+                    <input type="text" id="cedula" th:field="*{cedula}" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo"><i class="fas fa-envelope"></i> Correo:</label>
+                    <input type="email" id="correo" th:field="*{correo}" required>
+                </div>
+                <div class="form-group">
+                  <label for="celular"><i class="fas fa-phone"></i> Teléfono:</label>
+                    <input type="text" id="celular" th:field="*{celular}" required>
+                </div>
+                <button type="submit" class="btn btn-primary submit-button"><i class="fas fa-save"></i> Actualizar</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="">Política de Privacidad</a> | <a href="">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
