@@ -7,15 +7,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class PetServiceImpl implements PetService {
-    private final PetRepository petRepository;
 
-    public PetServiceImpl(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
+    @Autowired
+    private PetRepository petRepository;
 
     @Override
     public List<Pet> getAllPets() {
@@ -23,29 +20,100 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet getPetById(Long id) {
+    public Optional<Pet> getPetById(Long id) {
         return petRepository.findById(id);
     }
 
     @Override
-    public void addPet(Pet pet) {
-        petRepository.save(pet);
-    }
-
-    @Override
-    public void updatePet(Pet pet) {
-        petRepository.save(pet);
+    public Pet savePet(Pet pet) {
+        return petRepository.save(pet);
     }
 
     @Override
     public void deletePet(Long id) {
-        petRepository.delete(id);
+        petRepository.deleteById(id);
     }
 
     @Override
+    public List<Pet> findByNombre(String nombre) {
+        return petRepository.findByNombre(nombre);
+    }
+
+    @Override
+    public List<Pet> findByRaza(String raza) {
+        return petRepository.findByRaza(raza);
+    }
+
+    @Override
+    public List<Pet> findByEnfermedad(String enfermedad) {
+        return petRepository.findByEnfermedad(enfermedad);
+    }
+
+
+    @Override
+    public List<Pet> findByOwnerId(Long ownerId) {
+        return petRepository.findByOwnerId(ownerId);
+    }
+
+    @Override
+    public List<Pet> findByNombreContaining(String texto) {
+        return petRepository.findByNombreContaining(texto);
+    }
+
+    @Override
+    public long countByNombre(String nombre) {
+        return petRepository.countByNombre(nombre);
+    }
+
+    @Override
+    public void deleteByNombre(String nombre) {
+        petRepository.deleteByNombre(nombre);
+    }
+
+    @Override
+    public List<Pet> findAllByOrderByNombreAsc() {
+        return petRepository.findAllByOrderByNombreAsc();
+    }
+    @Override
     public List<Pet> searchPets(String query) {
-        return petRepository.findAll().stream()
-                .filter(pet -> pet.getNombre().toLowerCase().contains(query.toLowerCase()))
-                .collect(Collectors.toList());
+        // Puedes agregar una búsqueda personalizada aquí, si es necesario
+        return petRepository.findByNombreContaining(query);
+    }
+    @Override
+    public boolean activatePet(Long id) {
+        Optional<Pet> optionalPet = petRepository.findById(id);
+        if (optionalPet.isPresent()) {
+            Pet pet = optionalPet.get();
+            pet.setEstado(true);
+            petRepository.save(pet);
+            return true; // Indica que la mascota se activó correctamente
+        }
+        return false; // Indica que la mascota no fue encontrada
+    }
+
+    // Desactiva una mascota
+    @Override
+    public boolean deactivatePet(Long id) {
+        Optional<Pet> optionalPet = petRepository.findById(id);
+        if (optionalPet.isPresent()) {
+            Pet pet = optionalPet.get();
+            pet.setEstado(false);
+            petRepository.save(pet);
+            return true; // Indica que la mascota se desactivó correctamente
+        }
+        return false; // Indica que la mascota no fue encontrada
+    }
+
+    // Obtiene todas las mascotas activas
+    @Override
+    public List<Pet> getActivePets() {
+        return petRepository.findByEstado(true);
+    }
+
+    // Obtiene todas las mascotas inactivas
+    @Override
+    public List<Pet> getInactivePets() {
+        return petRepository.findByEstado(false);
     }
 }
+

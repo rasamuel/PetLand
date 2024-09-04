@@ -3,6 +3,10 @@ body {
   font-family: Arial, sans-serif;
   background-color: #D9D4C5;
 }
+.brand-text {
+  font-size: 24px; /* Tamaño del texto */
+  line-height: 2; /* Asegura que el texto esté alineado en el centro vertical */
+}
 p {
   font-size: 20px;
 }
@@ -22,7 +26,9 @@ main {
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
   gap: 20px; 
 }
-
+.navbar-container {
+  font-size: 20px;
+}
 .servicio {
   text-align: center;
   padding: 20px;
@@ -98,6 +104,9 @@ main {
   color: #0A2126;
   line-height: 1.6;
 }
+.experiencia {
+  font-size: 20px; 
+}
 
 hr {
   border: none; /* Remueve cualquier borde predeterminado */
@@ -105,7 +114,9 @@ hr {
   background-color: #333; /* Color de fondo si no usas degradado */
   height: 2px;  /* Altura de la línea */
 }
-
+.about-us p li{
+ font-size: 20px;
+}
 .equipo .content{
   text-align: center;
   margin-bottom: 40px;
@@ -413,73 +424,48 @@ div.desc {
   height: auto;
 }
 
-.footer {
-  background: #A0A68A; /* Fondo del pie de página */
-  padding: 30px 0;
-  font-family: 'Play', sans-serif;
-  text-align: center; /* Centrar el texto */
-  color: #002B2B; /* Color del texto principal */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrar elementos horizontalmente */
+footer {
+  background-color: #133840;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.footer .row {
-  width: 100%;
-  margin: 1% 0;
-  padding: 0.6% 0;
-  color: #002B2B; /* Color del texto dentro de .row */
-  font-size: 0.8em;
-  display: flex;
-  justify-content: center; /* Centrar elementos en la fila */
-  flex-wrap: wrap; /* Ajustar a múltiples líneas si es necesario */
+.footer-content {
+  margin-bottom: 10px;
 }
 
-.footer .row a {
-  text-decoration: none;
-  color: #0A2126; /* Color de los enlaces */
-  transition: 0.5s;
-  margin-left: 10px;
-}
-
-.footer .row a:hover {
-  color: #fff; /* Color de los enlaces en hover */
-}
-
-.footer .row ul {
-  width: 100%;
-  padding: 0;
-  list-style: none; /* Eliminar puntos de la lista */
+.footer-content p {
   margin: 0;
 }
 
-.footer .row ul li {
-  display: inline-block;
-  margin: 0 30px; /* Espacio entre los elementos de la lista */
+.footer-content a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-.footer .row a i {
-  font-size: 2em; /* Tamaño de los íconos */
-  margin: 0 1%; /* Espacio alrededor de los íconos */
+.footer-content a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 720px) {
-  .footer {
-    text-align: left; /* Cambiar alineación en dispositivos pequeños */
-    padding: 5%;
-  }
-  
-  .footer .row ul li {
-    display: block; /* Hacer que los elementos de la lista se apilen verticalmente */
-    margin: 10px 0;
-    text-align: left; /* Alineación del texto en dispositivos pequeños */
-  }
-  
-  .footer .row a i {
-    margin: 0 3%; /* Espacio alrededor de los íconos en dispositivos pequeños */
-  }
+.footer-social {
+  margin-top: 10px;
 }
 
+.footer-social a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #f0f0f0;
+}
 .sedes{
   background-color: #D9D4C5;
   text-align: center;
@@ -576,10 +562,6 @@ div.desc {
   visibility: visible;
 }
 
-footer {
-  background-color: #D9D4C5;
-}
-
 .botones {
   margin-left: 10px;
 }
@@ -647,4 +629,26 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   margin: 0;
   font-size: 40px; /* Tamaño del encabezado */
   color: #ccc; /* Color del encabezado */
+}
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #5F735A; /* Color de fondo del botón */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+
+.boton:active {
+  background-color: #0A2126; /* Color de fondo en clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra en clic */
+  transform: translateY(2px); /* Efecto de presionado */
 }
