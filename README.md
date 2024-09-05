@@ -21,6 +21,13 @@ PetLand es una aplicación web desarrollada para una clínica veterinaria especi
 - Proporcionar un portal de administración para el análisis empresarial y la gestión del personal.
 
 ## Características
+### Paleta de colores aplicada:
+- #0A2126
+- #133840
+- #5F735A
+- #A0A68A
+- #D9D4C5
+![paleta](https://github.com/user-attachments/assets/133e75a9-19dc-4f8f-a987-ed7aea595e00)
 
 ### Para propietarios de mascotas:
 - Ver el estado de la mascota y el historial de tratamientos.
