@@ -19,6 +19,8 @@ PetLand es una aplicación web desarrollada para una clínica veterinaria especi
 - Permitir a los propietarios de mascotas mantenerse informados sobre el estado de sus mascotas.
 - Permitir al personal veterinario registrar tratamientos médicos y observaciones.
 - Proporcionar un portal de administración para el análisis empresarial y la gestión del personal.
+## Mockups iniciales propuestos
+- https://www.figma.com/design/H9HUOVy4VDqqVzbzSowuuT/MockUps_Web?node-id=0-1&node-type=CANVAS&t=mgb0VPB5Tyrpa59H-0
 
 ## Características
 ### Paleta de colores aplicada:
