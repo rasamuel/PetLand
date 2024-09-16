@@ -15,6 +15,15 @@ public class Veterinario {
     private String foto;
     private String nombre;
 
+    public Veterinario(String contrasena, String especialidad, String foto, String nombre) {
+        this.contrasena = contrasena;
+        this.especialidad = especialidad;
+        this.foto = foto;
+        this.nombre = nombre;
+    }
+    public Veterinario() {
+    }
+
     // Getters y Setters
     public Long getId() {
         return id;
