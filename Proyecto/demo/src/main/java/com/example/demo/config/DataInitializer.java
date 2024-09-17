@@ -254,26 +254,26 @@ public class DataInitializer {
                 }
             }
             List<Veterinario> veterinarios = List.of(
-                new Veterinario("Dr. Juan Pérez", "12345", "Cirugía", "url/to/foto1.jpg"),
-                new Veterinario("Dra. Ana Gómez", "12345", "Dermatología", "url/to/foto2.jpg"),
-                new Veterinario("Dr. Luis Martínez", "12345", "Oftalmología", "url/to/foto3.jpg"),
-                new Veterinario("Dra. Carla Rodríguez", "12345", "Ortopedia", "url/to/foto4.jpg"),
-                new Veterinario("Dr. Miguel Sánchez", "12345", "Cardiología", "url/to/foto5.jpg"),
-                new Veterinario("Dra. Laura Fernández", "12345", "Oncología", "url/to/foto6.jpg"),
-                new Veterinario("Dr. Pablo Hernández", "12345", "Neurología", "url/to/foto7.jpg"),
-                new Veterinario("Dra. Silvia López", "12345", "Odontología", "url/to/foto8.jpg"),
-                new Veterinario("Dr. Eduardo Torres", "12345", "Anestesiología", "url/to/foto9.jpg"),
-                new Veterinario("Dra. Gabriela Ramírez", "12345", "Medicina General", "url/to/foto10.jpg"),
-                new Veterinario("Dr. Ricardo Méndez", "12345", "Cirugía", "url/to/foto11.jpg"),
-                new Veterinario("Dra. Sofía Morales", "12345", "Dermatología", "url/to/foto12.jpg"),
-                new Veterinario("Dr. Fernando Ortiz", "12345", "Oftalmología", "url/to/foto13.jpg"),
-                new Veterinario("Dra. Mariana Castro", "12345", "Ortopedia", "url/to/foto14.jpg"),
-                new Veterinario("Dr. Sergio Aguirre", "12345", "Cardiología", "url/to/foto15.jpg"),
-                new Veterinario("Dra. Patricia Vega", "12345", "Oncología", "url/to/foto16.jpg"),
-                new Veterinario("Dr. Álvaro Navarro", "12345", "Neurología", "url/to/foto17.jpg"),
-                new Veterinario("Dra. Camila Jiménez", "12345", "Odontología", "url/to/foto18.jpg"),
-                new Veterinario("Dr. Andrés Castro", "12345", "Anestesiología", "url/to/foto19.jpg"),
-                new Veterinario("Dra. Paula Rivas", "12345", "Medicina General", "url/to/foto20.jpg")
+                new Veterinario("Juan Pérez", "12345", "Cirugía", "url/to/foto1.jpg"),
+                new Veterinario("Ana Gómez", "12345", "Dermatología", "url/to/foto2.jpg"),
+                new Veterinario("Luis Martínez", "12345", "Oftalmología", "url/to/foto3.jpg"),
+                new Veterinario("Carla Rodríguez", "12345", "Ortopedia", "url/to/foto4.jpg"),
+                new Veterinario("Miguel Sánchez", "12345", "Cardiología", "url/to/foto5.jpg"),
+                new Veterinario("Laura Fernández", "12345", "Oncología", "url/to/foto6.jpg"),
+                new Veterinario("Pablo Hernández", "12345", "Neurología", "url/to/foto7.jpg"),
+                new Veterinario("Silvia López", "12345", "Odontología", "url/to/foto8.jpg"),
+                new Veterinario("Eduardo Torres", "12345", "Anestesiología", "url/to/foto9.jpg"),
+                new Veterinario("Gabriela Ramírez", "12345", "Medicina General", "url/to/foto10.jpg"),
+                new Veterinario("Ricardo Méndez", "12345", "Cirugía", "url/to/foto11.jpg"),
+                new Veterinario("Sofía Morales", "12345", "Dermatología", "url/to/foto12.jpg"),
+                new Veterinario("Fernando Ortiz", "12345", "Oftalmología", "url/to/foto13.jpg"),
+                new Veterinario("Mariana Castro", "12345", "Ortopedia", "url/to/foto14.jpg"),
+                new Veterinario("Sergio Aguirre", "12345", "Cardiología", "url/to/foto15.jpg"),
+                new Veterinario("Patricia Vega", "12345", "Oncología", "url/to/foto16.jpg"),
+                new Veterinario("Álvaro Navarro", "12345", "Neurología", "url/to/foto17.jpg"),
+                new Veterinario("Camila Jiménez", "12345", "Odontología", "url/to/foto18.jpg"),
+                new Veterinario("Andrés Castro", "12345", "Anestesiología", "url/to/foto19.jpg"),
+                new Veterinario("Paula Rivas", "12345", "Medicina General", "url/to/foto20.jpg")
             );
         
             veterinarios.forEach(veterinarioRepository::save);
