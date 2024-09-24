@@ -1,10 +1,14 @@
 package com.example.demo.config;
 
+import com.example.demo.entidades.Medicamento;
 import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Pet;
+import com.example.demo.entidades.Tratamiento;
 import com.example.demo.entidades.Veterinario;
+import com.example.demo.repositorio.MedicamentoRepository;
 import com.example.demo.repositorio.OwnerRepository;
 import com.example.demo.repositorio.PetRepository;
+import com.example.demo.repositorio.TratamientoRepository;
 import com.example.demo.repositorio.VeterinarioRepository;
 import com.github.javafaker.Faker;
 
@@ -13,8 +17,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -30,6 +35,11 @@ public class DataInitializer {
     @Autowired
     private VeterinarioRepository veterinarioRepository;
 
+    @Autowired
+    private TratamientoRepository tratamientoRepository;
+    
+    @Autowired
+    private MedicamentoRepository medicamentoRepository;
 
     // Lista de enfermedades comunes en perros
     private static final List<String> enfermedadesComunes = Arrays.asList(
@@ -221,9 +231,11 @@ public class DataInitializer {
             for (int i = 1; i <= 50; i++) {
                 Owner owner = new Owner();
                 owner.setNombre(faker.name().fullName());
-                owner.setCedula(faker.idNumber().valid());
+                String cedulaSinGuiones = faker.idNumber().valid().replace("-", "");
+                owner.setCedula(cedulaSinGuiones);
                 owner.setCorreo(faker.internet().emailAddress());
-                owner.setCelular(faker.phoneNumber().cellPhone());
+                String telefonoFormateado = faker.numerify("(###) ###-####");
+                owner.setCelular(telefonoFormateado);
                 ownerRepository.save(owner);
 
                 // Crear 2 mascotas por propietario
@@ -254,7 +266,6 @@ public class DataInitializer {
                 }
             }
             List<Veterinario> veterinarios = List.of(
-                new Veterinario("Juan Pérez", "12345", "Cirugía", "url/to/foto1.jpg"),
                 new Veterinario("Ana Gómez", "12345", "Dermatología", "url/to/foto2.jpg"),
                 new Veterinario("Luis Martínez", "12345", "Oftalmología", "url/to/foto3.jpg"),
                 new Veterinario("Carla Rodríguez", "12345", "Ortopedia", "url/to/foto4.jpg"),
@@ -276,7 +287,82 @@ public class DataInitializer {
                 new Veterinario("Paula Rivas", "12345", "Medicina General", "url/to/foto20.jpg")
             );
         
-            veterinarios.forEach(veterinarioRepository::save);
+        veterinarios.forEach(veterinarioRepository::save);
+
+        Owner owner1 = new Owner(null, "Carlos", "5551234", "carlos.gomez@example.com", "(363) 441-3908");
+        Owner owner2 = new Owner(null, "Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852");
+        Owner owner3 = new Owner(null, "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791");
+        Owner owner4 = new Owner(null, "Ana", "5556789", "ana.morales@example.com", "(616) 795-2420");
+        Owner owner5 = new Owner(null, "Elena", "5553456", "elena.garcia@example.com", "(520) 840-5545");
+        ownerRepository.save(owner1);
+        ownerRepository.save(owner2);
+        ownerRepository.save(owner3);
+        ownerRepository.save(owner4);
+        ownerRepository.save(owner5);
+        
+        // Crear mascotas de ejemplo
+        Pet pet1 = new Pet(null, "Bobby", "Golden Retriever", "url/to/pet1.jpg", 3, 25.5, "Ninguna", true, owner1);
+        Pet pet2 = new Pet(null, "Mia", "Siames", "url/to/pet2.jpg", 2, 4.2, "Dermatitis", false, owner2);
+        Pet pet3 = new Pet(null, "Max", "Bulldog", "url/to/pet3.jpg", 5, 22.0, "Alergias", true, owner3);
+        Pet pet4 = new Pet(null, "Nina", "Labrador", "url/to/pet4.jpg", 4, 27.8, "Ninguna", true, owner4);
+        Pet pet5 = new Pet(null, "Rocky", "Chihuahua", "url/to/pet5.jpg", 6, 5.5, "Cardiopatía", false, owner5);
+        petRepository.save(pet1);
+        petRepository.save(pet2);
+        petRepository.save(pet3);
+        petRepository.save(pet4);
+        petRepository.save(pet5);
+        
+        // Crear veterinarios de ejemplo
+        Veterinario vet1 = new Veterinario("Juan Pérez", "12345", "Cirugía", "url/to/foto1.jpg");
+        Veterinario vet2 = new Veterinario("María López", "54321", "Dermatología", "url/to/foto2.jpg");
+        Veterinario vet3 = new Veterinario("Roberto Díaz", "56789", "Oncología", "url/to/foto3.jpg");
+        Veterinario vet4 = new Veterinario("Laura García", "67890", "Oftalmología", "url/to/foto4.jpg");
+        veterinarioRepository.save(vet1);
+        veterinarioRepository.save(vet2);
+        veterinarioRepository.save(vet3);
+        veterinarioRepository.save(vet4);
+        
+        // Crear medicamentos de ejemplo
+        Medicamento med1 = new Medicamento("Antibiótico", 500f, 750f, 100, 30);
+        Medicamento med2 = new Medicamento("Vacuna", 300f, 500f, 150, 50);
+        Medicamento med3 = new Medicamento("Analgésico", 200f, 350f, 80, 20);
+        Medicamento med4 = new Medicamento("Desparasitante", 150f, 250f, 120, 60);
+        medicamentoRepository.save(med1);
+        medicamentoRepository.save(med2);
+        medicamentoRepository.save(med3);
+        medicamentoRepository.save(med4);
+        
+        // Crear fechas explícitas
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha1 = dateFormat.parse("2023-09-01");
+        Date fecha2 = dateFormat.parse("2023-08-15");
+        Date fecha3 = dateFormat.parse("2023-07-10");
+        Date fecha4 = dateFormat.parse("2023-06-25");
+        Date fecha5 = dateFormat.parse("2023-05-30");
+        
+        // Crear tratamientos de ejemplo
+        Tratamiento tratamiento1 = new Tratamiento(null, fecha1, 2, med1, pet1, vet1);
+        Tratamiento tratamiento2 = new Tratamiento(null, fecha2, 1, med2, pet2, vet2);
+        Tratamiento tratamiento3 = new Tratamiento(null, fecha3, 1, med3, pet3, vet3);
+        Tratamiento tratamiento4 = new Tratamiento(null, fecha4, 2, med4, pet4, vet4);
+        Tratamiento tratamiento5 = new Tratamiento(null, fecha5, 3, med1, pet5, vet1);
+        Tratamiento tratamiento6 = new Tratamiento(null, fecha1, 1, med2, pet1, vet2);
+        Tratamiento tratamiento7 = new Tratamiento(null, fecha2, 2, med3, pet2, vet3);
+        Tratamiento tratamiento8 = new Tratamiento(null, fecha3, 1, med4, pet3, vet4);
+        Tratamiento tratamiento9 = new Tratamiento(null, fecha4, 3, med1, pet4, vet1);
+        Tratamiento tratamiento10 = new Tratamiento(null, fecha5, 2, med2, pet5, vet2);
+        
+        // Guardar los tratamientos en la base de datos
+        tratamientoRepository.save(tratamiento1);
+        tratamientoRepository.save(tratamiento2);
+        tratamientoRepository.save(tratamiento3);
+        tratamientoRepository.save(tratamiento4);
+        tratamientoRepository.save(tratamiento5);
+        tratamientoRepository.save(tratamiento6);
+        tratamientoRepository.save(tratamiento7);
+        tratamientoRepository.save(tratamiento8);
+        tratamientoRepository.save(tratamiento9);
+        tratamientoRepository.save(tratamiento10);
         };
     }
 

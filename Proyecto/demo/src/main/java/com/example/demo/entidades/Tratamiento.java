@@ -27,6 +27,14 @@ public class Tratamiento {
     @ManyToOne
     private Veterinario veterinario;
 
+    public Tratamiento(Long id, Date fecha, int cantidad, Medicamento medicamento, Pet mascota, Veterinario veterinario) {
+        this.id = id;
+        this.fecha = fecha;
+        this.cantidad = cantidad;
+        this.medicamento = medicamento;
+        this.mascota = mascota;
+        this.veterinario = veterinario;
+    }
     // Getters y Setters
     public Long getId() {
         return id;

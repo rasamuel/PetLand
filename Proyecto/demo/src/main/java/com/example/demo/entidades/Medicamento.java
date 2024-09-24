@@ -17,6 +17,14 @@ public class Medicamento {
     private int unidadesDisponibles;
     private int unidadesVendidas;
 
+    public Medicamento(String string, float f, float g, int i, int j) {
+        nombre = string;
+        precioCompra = f;
+        precioVenta = g;
+        unidadesDisponibles = i;
+        unidadesVendidas = j;
+    }
+
     // Getters y Setters
     public Long getId() {
         return id;
