@@ -6,86 +6,49 @@ import com.example.demo.servicio.OwnerService;
 import com.example.demo.servicio.PetService;
 
 import jakarta.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
-@RequestMapping("/owners")
+@RestController
+@RequestMapping("/api/owners") // Cambiado para que sea un API Rest
 public class OwnerController {
+
     @Autowired
     private OwnerService ownerService;
+
     @Autowired
     private PetService petService;
 
-
-
-    // Mostrar la lista de propietarios
+    // Mostrar la lista de propietarios (GET)
     @GetMapping
-    public String listOwners(Model model) {
-        model.addAttribute("owners", ownerService.getAllOwners());
-        return "ownerList";
+    public List<Owner> listOwners() {
+        return ownerService.getAllOwners(); // Devuelve la lista de propietarios en formato JSON
     }
 
-    // Ver detalles de un propietario específico
+    // Ver detalles de un propietario específico (GET)
     @GetMapping("/{id}")
-    public String viewOwner(@PathVariable Long id, Model model) {
-        Optional<Owner> owner = ownerService.getOwnerById(id);
-        if (owner.isEmpty()) {
-            model.addAttribute("message", "Propietario no encontrado");
-            return "ownerError";
-        }
-        List<Pet> pets = petService.findByOwnerId(id);
-        model.addAttribute("owner", owner.get());
-        model.addAttribute("pets", pets);
-        return "ownerDetail";
+    public Optional<Owner> viewOwner(@PathVariable Long id) {
+        return ownerService.getOwnerById(id); // Devuelve el propietario en formato JSON
     }
 
-    // Mostrar el formulario para agregar un nuevo propietario
-    @GetMapping("/add")
-    public String showAddForm(Model model) {
-        model.addAttribute("owner", new Owner());
-        return "ownerAdd";
-    }
-
-    // Agregar un nuevo propietario
+    // Agregar un nuevo propietario (POST)
     @PostMapping("/add")
-    public String addOwner(@ModelAttribute Owner owner) {
-        ownerService.saveOwner(owner);
-        return "redirect:/owners";
+    public Owner addOwner(@RequestBody Owner owner) {
+        return ownerService.saveOwner(owner); // Guardar el propietario y devolver el objeto creado
     }
 
-    // Eliminar un propietario
-    @PostMapping("/delete/{id}")
-    public String deleteOwner(@PathVariable Long id) {
-        ownerService.deleteOwner(id);
-        return "redirect:/owners";
+    // Eliminar un propietario (DELETE)
+    @DeleteMapping("/delete/{id}")
+    public void deleteOwner(@PathVariable Long id) {
+        ownerService.deleteOwner(id); // Elimina el propietario
     }
 
-    // Mostrar el formulario para editar un propietario
-    @GetMapping("/{id}/edit")
-    public String editOwnerForm(@PathVariable("id") Long id, Model model) {
-        Optional<Owner> owner = ownerService.getOwnerById(id);
-        if (owner.isEmpty()) {
-            model.addAttribute("message", "Propietario no encontrado");
-            return "errorOwner";
-        }
-        model.addAttribute("owner", owner.get());
-        return "ownerEdit";
-    }
-
-    // Actualizar un propietario
-    @PostMapping("/{id}/update")
-    public String updateOwner(@PathVariable("id") Long id, @ModelAttribute Owner owner) {
-        System.out.println("ID: " + id);
-        System.out.println("Owner before update: " + owner);
-    
-        // Obtiene el Owner existente usando Optional
+    // Actualizar un propietario (PUT)
+    @PutMapping("/{id}/update")
+    public Owner updateOwner(@PathVariable("id") Long id, @RequestBody Owner owner) {
         Optional<Owner> optionalOwner = ownerService.getOwnerById(id);
         if (optionalOwner.isPresent()) {
             Owner existingOwner = optionalOwner.get();
@@ -93,40 +56,20 @@ public class OwnerController {
             existingOwner.setCedula(owner.getCedula());
             existingOwner.setCorreo(owner.getCorreo());
             existingOwner.setCelular(owner.getCelular());
-            ownerService.saveOwner(existingOwner);
+            return ownerService.saveOwner(existingOwner); // Devuelve el propietario actualizado
         } else {
-            // Manejar el caso en el que el owner no se encuentra
-            System.out.println("Owner with ID " + id + " not found.");
-            // Redirige o maneja el error según lo necesario
-            return "redirect:/owners?error=notfound";
+            throw new RuntimeException("Owner not found");
         }
-    
-        return "redirect:/owners";
     }
-    
 
-
-    // Iniciar sesión con cédula
-
+    // Mostrar las mascotas de un propietario logueado (GET)
     @GetMapping("/pets")
-    public String showOwnerPets(HttpSession session, Model model) {
-        Long ownerId = (Long) session.getAttribute("loggedInOwnerId"); // Obtén el ID del propietario de la sesión
-    
+    public List<Pet> showOwnerPets(HttpSession session) {
+        Long ownerId = (Long) session.getAttribute("loggedInOwnerId");
         if (ownerId == null) {
-            return "redirect:/login"; // Redirige al login si no hay un ID en la sesión
+            throw new RuntimeException("User not logged in");
         }
-    
-        Optional<Owner> owner = ownerService.getOwnerById(ownerId);
-        if (owner.isEmpty()) {
-            model.addAttribute("message", "Propietario no encontrado");
-            return "ownerError"; // Muestra un mensaje de error si el propietario no se encuentra
-        }
-    
-        List<Pet> pets = petService.findByOwnerId(ownerId);
-        System.out.println("Owner ID: " + ownerId);
-        System.out.println("Pets found: " + pets);
-        model.addAttribute("pets", pets);
-        return "ownerPets"; // Redirige a la vista de mascotas
+
+        return petService.findByOwnerId(ownerId); // Devuelve la lista de mascotas del propietario en formato JSON
     }
-    
 }

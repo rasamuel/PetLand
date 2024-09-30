@@ -1,109 +1,82 @@
 package com.example.demo.controlador;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Pet;
 import com.example.demo.servicio.OwnerService;
 import com.example.demo.servicio.PetService;
+
+import java.util.List;
 import java.util.Optional;
 
-
-@Controller
-@RequestMapping("/pets")
+@RestController
+@RequestMapping("/api/pets") // Cambio para que sea un controlador REST
 public class PetController {
+
     @Autowired
     private PetService petService;
+
     @Autowired
     private OwnerService ownerService;
 
-    // Mostrar la lista de mascotas
+    // Mostrar la lista de mascotas (GET)
     @GetMapping
-    public String listPets(Model model) {
-        model.addAttribute("pets", petService.getAllPets());
-        return "petList";
+    public List<Pet> listPets() {
+        return petService.getAllPets(); // Devuelve la lista de mascotas en JSON
     }
 
-    // Ver detalles de una mascota específica
+    // Ver detalles de una mascota específica (GET)
     @GetMapping("/{id}")
-    public String viewPet(@PathVariable Long id, Model model) {
-        Optional<Pet> pet = petService.getPetById(id);
-        if (pet.isEmpty()) {
-            model.addAttribute("message", "Mascota no encontrada");
-            return "error"; // O redirige a una página de error si la mascota no se encuentra
-        }
-        model.addAttribute("pet", pet.get());
-        return "petDetail";
+    public Optional<Pet> viewPet(@PathVariable Long id) {
+        return petService.getPetById(id); // Devuelve los detalles de una mascota en JSON
     }
 
-    @GetMapping("/add")
-    public String showAddForm(Model model) {
-      model.addAttribute("pet", new Pet());
-      model.addAttribute("owners", ownerService.getAllOwners());
-      return "petAdd";
-    }
-
-    // Agregar una nueva mascota
+    // Agregar una nueva mascota (POST)
     @PostMapping("/add")
-    public String addPet(@ModelAttribute Pet pet, @RequestParam Long ownerId) {
+    public Pet addPet(@RequestBody Pet pet, @RequestParam Long ownerId) {
         Optional<Owner> ownerOptional = ownerService.getOwnerById(ownerId);
         if (ownerOptional.isPresent()) {
-            pet.setOwner(ownerOptional.get()); // Asociar la mascota con el dueño
+            pet.setOwner(ownerOptional.get());
             pet.setEstado(true);
-            petService.savePet(pet); // Guardar la mascota
+            return petService.savePet(pet); // Guardar y devolver la nueva mascota en JSON
         } else {
-            return "redirect:/pets/add?error=ownerNotFound";
+            throw new RuntimeException("Owner not found");
         }
-        return "redirect:/pets";
     }
 
-    @PostMapping("/activate/{id}")
-    public String activatePet(@PathVariable Long id, Model model) {
-        boolean success = petService.activatePet(id);
-        if (success) {
-            model.addAttribute("message", "Mascota activada correctamente.");
-        } else {
-            model.addAttribute("error", "Mascota no encontrada.");
+    // Activar una mascota (PUT)
+    @PutMapping("/activate/{id}")
+    public void activatePet(@PathVariable Long id) {
+        if (!petService.activatePet(id)) {
+            throw new RuntimeException("Pet not found");
         }
-        return "redirect:/pets/activas";
     }
 
-    @PostMapping("/deactivate/{id}")
-    public String deactivatePet(@PathVariable Long id, Model model) {
-        boolean success = petService.deactivatePet(id);
-        if (success) {
-            model.addAttribute("message", "Mascota desactivada correctamente.");
-        } else {
-            model.addAttribute("error", "Mascota no encontrada.");
+    // Desactivar una mascota (PUT)
+    @PutMapping("/deactivate/{id}")
+    public void deactivatePet(@PathVariable Long id) {
+        if (!petService.deactivatePet(id)) {
+            throw new RuntimeException("Pet not found");
         }
-        return "redirect:/pets/inactivas";
     }
 
-    // Buscar mascotas
+    // Buscar mascotas (GET)
     @GetMapping("/search")
-    public String searchPets(@RequestParam("query") String query, Model model) {
-        model.addAttribute("pets", petService.searchPets(query));
-        return "petList";
+    public List<Pet> searchPets(@RequestParam("query") String query) {
+        return petService.searchPets(query); // Devuelve la lista de mascotas que coinciden en JSON
     }
 
-    // Mostrar el formulario para editar una mascota
+    // Mostrar el formulario para editar una mascota (GET)
     @GetMapping("/{id}/edit")
-    public String editPetForm(@PathVariable("id") Long id, Model model) {
-        Optional<Pet> pet = petService.getPetById(id);
-        if (pet.isEmpty()) {
-            model.addAttribute("message", "Mascota no encontrada");
-            return "error"; // O redirige a una página de error si la mascota no se encuentra
-        }
-        model.addAttribute("pet", pet.get());
-        return "petEdit"; // Nombre del archivo HTML para la edición
+    public Optional<Pet> editPetForm(@PathVariable("id") Long id) {
+        return petService.getPetById(id); // Devuelve la mascota en JSON para ser editada
     }
 
-    // Actualizar una mascota
-    @PostMapping("/{id}/update")
-    public String updatePet(@PathVariable("id") Long id, @ModelAttribute Pet pet) {
+    // Actualizar una mascota (PUT)
+    @PutMapping("/{id}/update")
+    public Pet updatePet(@PathVariable("id") Long id, @RequestBody Pet pet) {
         Optional<Pet> optionalPet = petService.getPetById(id);
         if (optionalPet.isPresent()) {
             Pet existingPet = optionalPet.get();
@@ -114,30 +87,28 @@ public class PetController {
             existingPet.setPeso(pet.getPeso());
             existingPet.setEnfermedad(pet.getEnfermedad());
             existingPet.setEstado(pet.getEstado());
-    
-            petService.savePet(existingPet);
-            return "redirect:/pets";
+
+            return petService.savePet(existingPet); // Devuelve la mascota actualizada en JSON
         } else {
-            // Manejar el caso en el que la mascota no se encuentra
-            return "redirect:/pets";
+            throw new RuntimeException("Pet not found");
         }
-    }
-    
-    @GetMapping("/activas")
-    public String viewActivePets(Model model) {
-        model.addAttribute("pets", petService.getActivePets());
-        return "petActive";  // Asegúrate de que petActive.html existe en /templates
     }
 
-    @GetMapping("/inactivas")
-    public String viewInactivePets(Model model) {
-        model.addAttribute("pets", petService.getInactivePets());
-        return "petInactive";  // Asegúrate de que petInactive.html existe en /templates
+    // Mostrar las mascotas activas (GET)
+    @GetMapping("/activas")
+    public List<Pet> viewActivePets() {
+        return petService.getActivePets(); // Devuelve la lista de mascotas activas en JSON
     }
-    @PostMapping("/delete/{id}")
-        public String deletePet(@PathVariable Long id) {
-            petService.deletePet(id);
-            return "redirect:/pets";
-        }
-    
+
+    // Mostrar las mascotas inactivas (GET)
+    @GetMapping("/inactivas")
+    public List<Pet> viewInactivePets() {
+        return petService.getInactivePets(); // Devuelve la lista de mascotas inactivas en JSON
+    }
+
+    // Eliminar una mascota (DELETE)
+    @DeleteMapping("/delete/{id}")
+    public void deletePet(@PathVariable Long id) {
+        petService.deletePet(id); // Elimina la mascota
+    }
 }
