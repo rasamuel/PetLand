@@ -289,7 +289,7 @@ public class DataInitializer {
         
         veterinarios.forEach(veterinarioRepository::save);
 
-        Owner owner1 = new Owner(null, "Carlos", "5551234", "carlos.gomez@example.com", "(363) 441-3908");
+        Owner owner1 = new Owner(null, "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908");
         Owner owner2 = new Owner(null, "Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852");
         Owner owner3 = new Owner(null, "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791");
         Owner owner4 = new Owner(null, "Ana", "5556789", "ana.morales@example.com", "(616) 795-2420");
