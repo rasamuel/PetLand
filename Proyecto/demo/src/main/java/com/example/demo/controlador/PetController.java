@@ -24,8 +24,11 @@ public class PetController {
     // Mostrar la lista de mascotas (GET)
     @GetMapping
     public List<Pet> listPets() {
-        return petService.getAllPets(); // Devuelve la lista de mascotas en JSON
+        List<Pet> pets = petService.getAllPets();
+        System.out.println("Lista de mascotas obtenidas del backend: " + pets.size());  // Verifica cuántas mascotas se están devolviendo
+        return pets; 
     }
+
 
     // Ver detalles de una mascota específica (GET)
     @GetMapping("/{id}")

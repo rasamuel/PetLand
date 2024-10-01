@@ -3,6 +3,8 @@ package com.example.demo.entidades;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Owner {
     
@@ -16,6 +18,7 @@ public class Owner {
     private String celular;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Pet> pets;
 
     public Owner() {}

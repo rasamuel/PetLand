@@ -1,5 +1,7 @@
 package com.example.demo.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 
@@ -21,6 +23,7 @@ public class Pet {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
+    @JsonBackReference
     private Owner owner;
 
     public Pet() {

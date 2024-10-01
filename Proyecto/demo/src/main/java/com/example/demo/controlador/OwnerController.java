@@ -13,7 +13,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/owners") // Cambiado para que sea un API Rest
+@RequestMapping("/api/owners")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")  // Permitir solicitudes desde el frontend
 public class OwnerController {
 
     @Autowired
@@ -25,25 +26,25 @@ public class OwnerController {
     // Mostrar la lista de propietarios (GET)
     @GetMapping
     public List<Owner> listOwners() {
-        return ownerService.getAllOwners(); // Devuelve la lista de propietarios en formato JSON
+        return ownerService.getAllOwners();
     }
 
     // Ver detalles de un propietario específico (GET)
     @GetMapping("/{id}")
     public Optional<Owner> viewOwner(@PathVariable Long id) {
-        return ownerService.getOwnerById(id); // Devuelve el propietario en formato JSON
+        return ownerService.getOwnerById(id);
     }
 
     // Agregar un nuevo propietario (POST)
     @PostMapping("/add")
     public Owner addOwner(@RequestBody Owner owner) {
-        return ownerService.saveOwner(owner); // Guardar el propietario y devolver el objeto creado
+        return ownerService.saveOwner(owner);
     }
 
     // Eliminar un propietario (DELETE)
     @DeleteMapping("/delete/{id}")
     public void deleteOwner(@PathVariable Long id) {
-        ownerService.deleteOwner(id); // Elimina el propietario
+        ownerService.deleteOwner(id);
     }
 
     // Actualizar un propietario (PUT)
@@ -56,20 +57,15 @@ public class OwnerController {
             existingOwner.setCedula(owner.getCedula());
             existingOwner.setCorreo(owner.getCorreo());
             existingOwner.setCelular(owner.getCelular());
-            return ownerService.saveOwner(existingOwner); // Devuelve el propietario actualizado
+            return ownerService.saveOwner(existingOwner);
         } else {
             throw new RuntimeException("Owner not found");
         }
     }
 
     // Mostrar las mascotas de un propietario logueado (GET)
-    @GetMapping("/pets")
-    public List<Pet> showOwnerPets(HttpSession session) {
-        Long ownerId = (Long) session.getAttribute("loggedInOwnerId");
-        if (ownerId == null) {
-            throw new RuntimeException("User not logged in");
-        }
-
-        return petService.findByOwnerId(ownerId); // Devuelve la lista de mascotas del propietario en formato JSON
+    @GetMapping("/{id}/pets")
+    public List<Pet> getOwnerPets(@PathVariable Long id) {
+        return petService.findByOwnerId(id); // Devuelve la lista de mascotas del propietario en formato JSON
     }
 }

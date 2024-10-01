@@ -15,8 +15,10 @@ import com.example.demo.entidades.Veterinario;
 import com.example.demo.servicio.OwnerService;
 import com.example.demo.servicio.VeterinarioService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
-@CrossOrigin(origins = "*") // Permitir que cualquier dominio consuma este servicio
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class LoginController {
 
     @Autowired
@@ -27,34 +29,33 @@ public class LoginController {
 
     // Login de Owner
     @PostMapping("/owners/login")
-    public ResponseEntity<?> loginOwner(@RequestParam("cedula") String cedula) {
+    public ResponseEntity<?> loginOwner(@RequestParam("cedula") String cedula, HttpSession session) {
         Optional<Owner> owner = ownerService.authenticateByCedula(cedula);
         if (owner.isPresent()) {
-            // Si se autentica, devuelve el ID o un token JWT
-            return ResponseEntity.ok(owner.get().getId()); // Devuelve el ID del propietario autenticado
+            // Guarda el ID del dueño en la sesión
+            session.setAttribute("loggedInOwnerId", owner.get().getId());
+            return ResponseEntity.ok(owner.get().getId());
         } else {
-            // Si no se autentica, devuelve un mensaje de error
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Cédula inválida");
         }
     }
+    
 
     // Login de Veterinario
     @PostMapping("/vet/login")
     public ResponseEntity<?> loginVeterinario(@RequestParam("nombre") String nombre, @RequestParam("contrasena") String contrasena) {
         Optional<Veterinario> veterinario = veterinarioService.authenticate(nombre, contrasena);
         if (veterinario.isPresent()) {
-            // Si se autentica, devuelve el ID o un token JWT
-            return ResponseEntity.ok(veterinario.get().getId()); // Devuelve el ID del veterinario autenticado
+            return ResponseEntity.ok(veterinario.get().getId());
         } else {
-            // Si no se autentica, devuelve un mensaje de error
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Nombre o contraseña inválidos");
         }
     }
 
-    // Logout (opcional)
+    // Logout
     @PostMapping("/logout")
-    public ResponseEntity<?> logout() {
-        // Como no estás manejando sesiones de servidor, simplemente devolvemos un OK.
+    public ResponseEntity<?> logout(HttpSession session) {
+        session.invalidate();  // Invalida la sesión
         return ResponseEntity.ok("Logout exitoso");
     }
 }
