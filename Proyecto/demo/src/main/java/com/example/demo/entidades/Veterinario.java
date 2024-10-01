@@ -18,7 +18,7 @@ public class Veterinario {
 
     public Veterinario(String nombre, String correo,String contrasena, String especialidad, String foto) {
         this.contrasena = contrasena;
-        this.correo = contraseña;
+        this.correo = correo;
         this.especialidad = especialidad;
         this.foto = foto;
         this.nombre = nombre;

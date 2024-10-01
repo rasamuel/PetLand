@@ -23,4 +23,5 @@ public interface OwnerRepository extends JpaRepository<Owner, Long> {
     long countByCedula(String cedula);
     void deleteByCedula(String cedula);
     List<Owner> findAllByOrderByNombreAsc();
+    List<Owner> findByNombreContainingIgnoreCaseOrCorreoContainingIgnoreCase(String nombre, String correo);
 }
