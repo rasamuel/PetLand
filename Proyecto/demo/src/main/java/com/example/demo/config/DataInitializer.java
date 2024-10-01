@@ -273,19 +273,19 @@ public class DataInitializer {
                 new Veterinario("Miguel Sánchez", "correo4@gmail.com","12345", "Cardiología", "url/to/foto5.jpg"),
                 new Veterinario("Laura Fernández", "correo5@gmail.com","12345", "Oncología", "url/to/foto6.jpg"),
                 new Veterinario("Pablo Hernández", "correo6@gmail.com","12345", "Neurología", "url/to/foto7.jpg"),
-                new Veterinario("Silvia López", "correo7@gmail.com","12345","12345", "Odontología", "url/to/foto8.jpg"),
-                new Veterinario("Eduardo Torres", "correo8@gmail.com","12345","12345", "Anestesiología", "url/to/foto9.jpg"),
-                new Veterinario("Gabriela Ramírez", "correo9@gmail.com","12345","12345", "Medicina General", "url/to/foto10.jpg"),
-                new Veterinario("Ricardo Méndez", "correo10@gmail.com","12345","12345", "Cirugía", "url/to/foto11.jpg"),
-                new Veterinario("Sofía Morales", "correo11@gmail.com","12345","12345", "Dermatología", "url/to/foto12.jpg"),
-                new Veterinario("Fernando Ortiz", "correo12@gmail.com","12345","12345", "Oftalmología", "url/to/foto13.jpg"),
-                new Veterinario("Mariana Castro", "correo13@gmail.com","12345","12345", "Ortopedia", "url/to/foto14.jpg"),
-                new Veterinario("Sergio Aguirre", "correo14@gmail.com","12345","12345", "Cardiología", "url/to/foto15.jpg"),
-                new Veterinario("Patricia Vega", "correo15@gmail.com","12345","12345", "Oncología", "url/to/foto16.jpg"),
-                new Veterinario("Álvaro Navarro", "correo16@gmail.com","12345","12345", "Neurología", "url/to/foto17.jpg"),
-                new Veterinario("Camila Jiménez", "correo17@gmail.com","12345","12345", "Odontología", "url/to/foto18.jpg"),
-                new Veterinario("Andrés Castro", "correo18@gmail.com","12345","12345", "Anestesiología", "url/to/foto19.jpg"),
-                new Veterinario("Paula Rivas", "correo19@gmail.com","12345","12345", "Medicina General", "url/to/foto20.jpg")
+                new Veterinario("Silvia López", "correo7@gmail.com","12345", "Odontología", "url/to/foto8.jpg"),
+                new Veterinario("Eduardo Torres", "correo8@gmail.com","12345", "Anestesiología", "url/to/foto9.jpg"),
+                new Veterinario("Gabriela Ramírez", "correo9@gmail.com","12345", "Medicina General", "url/to/foto10.jpg"),
+                new Veterinario("Ricardo Méndez", "correo10@gmail.com","12345", "Cirugía", "url/to/foto11.jpg"),
+                new Veterinario("Sofía Morales", "correo11@gmail.com","12345", "Dermatología", "url/to/foto12.jpg"),
+                new Veterinario("Fernando Ortiz", "correo12@gmail.com","12345", "Oftalmología", "url/to/foto13.jpg"),
+                new Veterinario("Mariana Castro", "correo13@gmail.com","12345", "Ortopedia", "url/to/foto14.jpg"),
+                new Veterinario("Sergio Aguirre", "correo14@gmail.com","12345", "Cardiología", "url/to/foto15.jpg"),
+                new Veterinario("Patricia Vega", "correo15@gmail.com","12345", "Oncología", "url/to/foto16.jpg"),
+                new Veterinario("Álvaro Navarro", "correo16@gmail.com","12345", "Neurología", "url/to/foto17.jpg"),
+                new Veterinario("Camila Jiménez", "correo17@gmail.com","12345", "Odontología", "url/to/foto18.jpg"),
+                new Veterinario("Andrés Castro", "correo18@gmail.com","12345", "Anestesiología", "url/to/foto19.jpg"),
+                new Veterinario("Paula Rivas", "correo19@gmail.com","12345", "Medicina General", "url/to/foto20.jpg")
             );
         
         veterinarios.forEach(veterinarioRepository::save);
