@@ -21,4 +21,5 @@ public interface OwnerService {
     void deleteByCedula(String cedula);
     List<Owner> findAllByOrderByNombreAsc();
     Optional<Owner> authenticateByCedula(String cedula);
+    List<Owner> searchOwners(String query);
 }

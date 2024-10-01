@@ -16,12 +16,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 @Configuration
 public class DataInitializer {
@@ -222,7 +230,7 @@ public class DataInitializer {
 
 
     @Bean
-    public CommandLineRunner loadData() {
+    public CommandLineRunner loadData() {   
         return (args) -> {
             Faker faker = new Faker();
             Random random = new Random();
@@ -322,7 +330,8 @@ public class DataInitializer {
         veterinarioRepository.save(vet2);
         veterinarioRepository.save(vet3);
         veterinarioRepository.save(vet4);
-        
+    
+        loadMedicamentosFromExcel("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
         // Crear medicamentos de ejemplo
         Medicamento med1 = new Medicamento("Antibiótico", 500f, 750f, 100, 30);
         Medicamento med2 = new Medicamento("Vacuna", 300f, 500f, 150, 50);
@@ -367,4 +376,45 @@ public class DataInitializer {
         };
     }
 
+        private void loadMedicamentosFromExcel(String fileName) {
+        try {
+            // Load the Excel file from the classpath
+            ClassPathResource resource = new ClassPathResource(fileName);
+            InputStream inputStream = resource.getInputStream();
+
+            try (Workbook workbook = new XSSFWorkbook(inputStream)) {
+                Sheet sheet = workbook.getSheetAt(0); // Assume medications are on the first sheet
+                for (Row row : sheet) {
+                    if (row.getRowNum() == 0 || row.getCell(0) == null) {
+                        // Skip the header row or empty rows
+                        continue;
+                    }
+
+                    // Read the row data
+                    String nombre = row.getCell(0).getStringCellValue();
+                    float precioCompra = (float) row.getCell(1).getNumericCellValue();
+                    float precioVenta = (float) row.getCell(2).getNumericCellValue();
+                    int unidadesDisponibles = (int) row.getCell(3).getNumericCellValue();
+                    int unidadesVendidas = (int) row.getCell(4).getNumericCellValue();
+
+                    // Create a new Medicamento object
+                    Medicamento medicamento = new Medicamento(nombre, precioCompra, precioVenta, unidadesDisponibles, unidadesVendidas);
+
+                    // Save it to the repository
+                    medicamentoRepository.save(medicamento);
+                }
+
+                System.out.println("Medicamentos initialized successfully from Excel!");
+
+            } catch (IOException e) {
+                System.err.println("Error reading Excel file: " + e.getMessage());
+                e.printStackTrace();
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to load the Excel file: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
 }
+
