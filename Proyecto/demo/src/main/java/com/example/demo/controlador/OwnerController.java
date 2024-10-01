@@ -40,6 +40,11 @@ public class OwnerController {
     public Owner addOwner(@RequestBody Owner owner) {
         return ownerService.saveOwner(owner);
     }
+    
+    @GetMapping("/search")
+    public List<Owner> searchOwners(@RequestParam("query") String query) {
+        return ownerService.searchOwners(query); // Devuelve la lista de dueños que coinciden en JSON
+    }
 
     // Eliminar un propietario (DELETE)
     @DeleteMapping("/delete/{id}")
