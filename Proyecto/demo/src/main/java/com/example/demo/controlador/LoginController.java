@@ -43,8 +43,8 @@ public class LoginController {
 
     // Login de Veterinario
     @PostMapping("/vet/login")
-    public ResponseEntity<?> loginVeterinario(@RequestParam("nombre") String nombre, @RequestParam("contrasena") String contrasena) {
-        Optional<Veterinario> veterinario = veterinarioService.authenticate(nombre, contrasena);
+    public ResponseEntity<?> loginVeterinario(@RequestParam("correo") String correo, @RequestParam("contrasena") String contrasena) {
+        Optional<Veterinario> veterinario = veterinarioService.authenticate(correo, contrasena);
         if (veterinario.isPresent()) {
             return ResponseEntity.ok(veterinario.get().getId());
         } else {

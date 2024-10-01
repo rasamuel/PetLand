@@ -22,6 +22,6 @@ public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> 
 
     List<Veterinario> findByNombreStartingWith(String prefix);
     
-    Optional<Veterinario> findByNombreAndContrasena(String nombre, String contrasena);
+    Optional<Veterinario> findByCorreoAndContrasena(String correo, String contrasena);
     
 }

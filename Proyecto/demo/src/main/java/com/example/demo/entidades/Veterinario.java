@@ -10,13 +10,15 @@ public class Veterinario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String correo;
     private String contrasena;
     private String especialidad;
     private String foto;
     private String nombre;
 
-    public Veterinario(String nombre, String contrasena, String especialidad, String foto) {
+    public Veterinario(String nombre, String correo,String contrasena, String especialidad, String foto) {
         this.contrasena = contrasena;
+        this.correo = contraseña;
         this.especialidad = especialidad;
         this.foto = foto;
         this.nombre = nombre;
@@ -32,7 +34,12 @@ public class Veterinario {
     public void setId(Long id) {
         this.id = id;
     }
-
+    public String getCorreo(){
+        return correo;
+    }
+    public void setCorreo(){
+        this.correo = correo;
+    }
     public String getContrasena() {
         return contrasena;
     }

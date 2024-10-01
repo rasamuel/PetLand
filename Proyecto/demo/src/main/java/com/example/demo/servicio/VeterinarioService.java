@@ -13,7 +13,7 @@ public class VeterinarioService {
     @Autowired
     private VeterinarioRepository veterinarioRepository;
 
-    public Optional<Veterinario> authenticate(String nombre, String contrasena) {
-        return veterinarioRepository.findByNombreAndContrasena(nombre, contrasena);
+    public Optional<Veterinario> authenticate(String correo, String contrasena) {
+        return veterinarioRepository.findByCorreoAndContrasena(String correo, String contrasena);
     }
 }
