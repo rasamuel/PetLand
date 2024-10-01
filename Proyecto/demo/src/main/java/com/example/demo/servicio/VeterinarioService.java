@@ -14,6 +14,7 @@ public class VeterinarioService {
     private VeterinarioRepository veterinarioRepository;
 
     public Optional<Veterinario> authenticate(String correo, String contrasena) {
-        return veterinarioRepository.findByCorreoAndContrasena(String correo, String contrasena);
+        return veterinarioRepository.findByCorreoAndContrasena(correo, contrasena);
     }
+    
 }

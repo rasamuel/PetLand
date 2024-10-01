@@ -46,11 +46,14 @@ public class LoginController {
     public ResponseEntity<?> loginVeterinario(@RequestParam("correo") String correo, @RequestParam("contrasena") String contrasena) {
         Optional<Veterinario> veterinario = veterinarioService.authenticate(correo, contrasena);
         if (veterinario.isPresent()) {
-            return ResponseEntity.ok(veterinario.get().getId());
+            // Si se autentica, devuelve el ID o un token JWT
+            return ResponseEntity.ok(veterinario.get().getId()); // Devuelve el ID del veterinario autenticado
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Nombre o contraseña inválidos");
+            // Si no se autentica, devuelve un mensaje de error
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Correo o contraseña inválidos");
         }
     }
+    
 
     // Logout
     @PostMapping("/logout")

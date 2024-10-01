@@ -314,10 +314,10 @@ public class DataInitializer {
         petRepository.save(pet5);
         
         // Crear veterinarios de ejemplo
-        Veterinario vet1 = new Veterinario("Juan Pérez", "12345", "Cirugía", "url/to/foto1.jpg");
-        Veterinario vet2 = new Veterinario("María López", "54321", "Dermatología", "url/to/foto2.jpg");
-        Veterinario vet3 = new Veterinario("Roberto Díaz", "56789", "Oncología", "url/to/foto3.jpg");
-        Veterinario vet4 = new Veterinario("Laura García", "67890", "Oftalmología", "url/to/foto4.jpg");
+        Veterinario vet1 = new Veterinario("Juan Pérez", "correo20@gmail.com","12345", "Cirugía", "url/to/foto1.jpg");
+        Veterinario vet2 = new Veterinario("María López", "correo21@gmail.com","54321", "Dermatología", "url/to/foto2.jpg");
+        Veterinario vet3 = new Veterinario("Roberto Díaz", "correo22@gmail.com","56789", "Oncología", "url/to/foto3.jpg");
+        Veterinario vet4 = new Veterinario("Laura García", "correo23@gmail.com","67890", "Oftalmología", "url/to/foto4.jpg");
         veterinarioRepository.save(vet1);
         veterinarioRepository.save(vet2);
         veterinarioRepository.save(vet3);
