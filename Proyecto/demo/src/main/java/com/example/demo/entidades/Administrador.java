@@ -16,6 +16,18 @@ public class Administrador {
     private String correo;
     private String telefono;
 
+
+    public Administrador() {
+    }
+
+    public Administrador(Long id, String contrasena, String nombre, String correo, String telefono) {
+        this.id = id;
+        this.contrasena = contrasena;
+        this.nombre = nombre;
+        this.correo = correo;
+        this.telefono = telefono;
+    }
+    
     // Getters y Setters
     public Long getId() {
         return id;

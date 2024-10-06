@@ -25,4 +25,6 @@ public interface AdministradorRepository extends JpaRepository<Administrador, Lo
     List<Administrador> findByContrasena(String contrasena);
 
     List<Administrador> findByNombreContainingOrCorreoContaining(String nombreKeyword, String correoKeyword);
+    
+    Optional<Administrador> findByCorreoAndContrasena(String correo, String contrasena);
 }

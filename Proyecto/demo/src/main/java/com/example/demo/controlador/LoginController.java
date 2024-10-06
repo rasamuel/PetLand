@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entidades.Administrador;
 import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Veterinario;
+import com.example.demo.servicio.AdministradorService;
 import com.example.demo.servicio.OwnerService;
 import com.example.demo.servicio.VeterinarioService;
 
@@ -26,6 +28,9 @@ public class LoginController {
 
     @Autowired
     private VeterinarioService veterinarioService;
+
+    @Autowired
+    private AdministradorService administradorService;
 
     // Login de Owner
     @PostMapping("/owners/login")
@@ -54,6 +59,15 @@ public class LoginController {
         }
     }
     
+    @PostMapping("/admin/login")
+    public ResponseEntity<?> loginAdministrador(@RequestParam("correo") String correo, @RequestParam("contrasena") String contrasena) {
+        Optional<Administrador> administrador = administradorService.authenticate(correo, contrasena);
+        if (administrador.isPresent()) {
+            return ResponseEntity.ok(administrador.get().getId());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Correo o contraseña inválidos");
+        }
+    }
 
     // Logout
     @PostMapping("/logout")
@@ -61,4 +75,6 @@ public class LoginController {
         session.invalidate();  // Invalida la sesión
         return ResponseEntity.ok("Logout exitoso");
     }
+
+
 }

@@ -15,13 +15,15 @@ public class Veterinario {
     private String especialidad;
     private String foto;
     private String nombre;
+    private boolean estado;
 
-    public Veterinario(String nombre, String correo,String contrasena, String especialidad, String foto) {
+    public Veterinario(String nombre, String correo,String contrasena, String especialidad, String foto, boolean estado) {
         this.contrasena = contrasena;
         this.correo = correo;
         this.especialidad = especialidad;
         this.foto = foto;
         this.nombre = nombre;
+        this.estado = estado;
     }
     public Veterinario() {
     }
@@ -70,5 +72,13 @@ public class Veterinario {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 }

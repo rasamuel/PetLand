@@ -1,5 +1,6 @@
 package com.example.demo.config;
 
+import com.example.demo.entidades.Administrador;
 import com.example.demo.entidades.Medicamento;
 import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Pet;
@@ -10,6 +11,7 @@ import com.example.demo.repositorio.OwnerRepository;
 import com.example.demo.repositorio.PetRepository;
 import com.example.demo.repositorio.TratamientoRepository;
 import com.example.demo.repositorio.VeterinarioRepository;
+import com.example.demo.repositorio.AdministradorRepository;
 import com.github.javafaker.Faker;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,9 @@ public class DataInitializer {
     
     @Autowired
     private MedicamentoRepository medicamentoRepository;
+    
+    @Autowired
+    private AdministradorRepository administradorRepository;
 
     // Lista de enfermedades comunes en perros
     private static final List<String> enfermedadesComunes = Arrays.asList(
@@ -275,25 +280,25 @@ public class DataInitializer {
             }
             List<Veterinario> veterinarios = List.of(
 
-                new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "url/to/foto2.jpg"),
-                new Veterinario("Luis Martínez", "correo2@gmail.com","12345", "Oftalmología", "url/to/foto3.jpg"),
-                new Veterinario("Carla Rodríguez", "correo3@gmail.com","12345", "Ortopedia", "url/to/foto4.jpg"),
-                new Veterinario("Miguel Sánchez", "correo4@gmail.com","12345", "Cardiología", "url/to/foto5.jpg"),
-                new Veterinario("Laura Fernández", "correo5@gmail.com","12345", "Oncología", "url/to/foto6.jpg"),
-                new Veterinario("Pablo Hernández", "correo6@gmail.com","12345", "Neurología", "url/to/foto7.jpg"),
-                new Veterinario("Silvia López", "correo7@gmail.com","12345", "Odontología", "url/to/foto8.jpg"),
-                new Veterinario("Eduardo Torres", "correo8@gmail.com","12345", "Anestesiología", "url/to/foto9.jpg"),
-                new Veterinario("Gabriela Ramírez", "correo9@gmail.com","12345", "Medicina General", "url/to/foto10.jpg"),
-                new Veterinario("Ricardo Méndez", "correo10@gmail.com","12345", "Cirugía", "url/to/foto11.jpg"),
-                new Veterinario("Sofía Morales", "correo11@gmail.com","12345", "Dermatología", "url/to/foto12.jpg"),
-                new Veterinario("Fernando Ortiz", "correo12@gmail.com","12345", "Oftalmología", "url/to/foto13.jpg"),
-                new Veterinario("Mariana Castro", "correo13@gmail.com","12345", "Ortopedia", "url/to/foto14.jpg"),
-                new Veterinario("Sergio Aguirre", "correo14@gmail.com","12345", "Cardiología", "url/to/foto15.jpg"),
-                new Veterinario("Patricia Vega", "correo15@gmail.com","12345", "Oncología", "url/to/foto16.jpg"),
-                new Veterinario("Álvaro Navarro", "correo16@gmail.com","12345", "Neurología", "url/to/foto17.jpg"),
-                new Veterinario("Camila Jiménez", "correo17@gmail.com","12345", "Odontología", "url/to/foto18.jpg"),
-                new Veterinario("Andrés Castro", "correo18@gmail.com","12345", "Anestesiología", "url/to/foto19.jpg"),
-                new Veterinario("Paula Rivas", "correo19@gmail.com","12345", "Medicina General", "url/to/foto20.jpg")
+                new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "url/to/foto2.jpg", true),
+                new Veterinario("Luis Martínez", "correo2@gmail.com","12345", "Oftalmología", "url/to/foto3.jpg",true),
+                new Veterinario("Carla Rodríguez", "correo3@gmail.com","12345", "Ortopedia", "url/to/foto4.jpg",true),
+                new Veterinario("Miguel Sánchez", "correo4@gmail.com","12345", "Cardiología", "url/to/foto5.jpg",true),
+                new Veterinario("Laura Fernández", "correo5@gmail.com","12345", "Oncología", "url/to/foto6.jpg", true),
+                new Veterinario("Pablo Hernández", "correo6@gmail.com","12345", "Neurología", "url/to/foto7.jpg",true),
+                new Veterinario("Silvia López", "correo7@gmail.com","12345", "Odontología", "url/to/foto8.jpg",true),
+                new Veterinario("Eduardo Torres", "correo8@gmail.com","12345", "Anestesiología", "url/to/foto9.jpg",true),
+                new Veterinario("Gabriela Ramírez", "correo9@gmail.com","12345", "Medicina General", "url/to/foto10.jpg",true),
+                new Veterinario("Ricardo Méndez", "correo10@gmail.com","12345", "Cirugía", "url/to/foto11.jpg",true),
+                new Veterinario("Sofía Morales", "correo11@gmail.com","12345", "Dermatología", "url/to/foto12.jpg",true),
+                new Veterinario("Fernando Ortiz", "correo12@gmail.com","12345", "Oftalmología", "url/to/foto13.jpg",true),
+                new Veterinario("Mariana Castro", "correo13@gmail.com","12345", "Ortopedia", "url/to/foto14.jpg",true),
+                new Veterinario("Sergio Aguirre", "correo14@gmail.com","12345", "Cardiología", "url/to/foto15.jpg", true),
+                new Veterinario("Patricia Vega", "correo15@gmail.com","12345", "Oncología", "url/to/foto16.jpg", true),
+                new Veterinario("Álvaro Navarro", "correo16@gmail.com","12345", "Neurología", "url/to/foto17.jpg", true),
+                new Veterinario("Camila Jiménez", "correo17@gmail.com","12345", "Odontología", "url/to/foto18.jpg", true),
+                new Veterinario("Andrés Castro", "correo18@gmail.com","12345", "Anestesiología", "url/to/foto19.jpg", true),
+                new Veterinario("Paula Rivas", "correo19@gmail.com","12345", "Medicina General", "url/to/foto20.jpg", true)
             );
         
         veterinarios.forEach(veterinarioRepository::save);
@@ -322,10 +327,10 @@ public class DataInitializer {
         petRepository.save(pet5);
         
         // Crear veterinarios de ejemplo
-        Veterinario vet1 = new Veterinario("Juan Pérez", "correo20@gmail.com","12345", "Cirugía", "url/to/foto1.jpg");
-        Veterinario vet2 = new Veterinario("María López", "correo21@gmail.com","54321", "Dermatología", "url/to/foto2.jpg");
-        Veterinario vet3 = new Veterinario("Roberto Díaz", "correo22@gmail.com","56789", "Oncología", "url/to/foto3.jpg");
-        Veterinario vet4 = new Veterinario("Laura García", "correo23@gmail.com","67890", "Oftalmología", "url/to/foto4.jpg");
+        Veterinario vet1 = new Veterinario("Juan Pérez", "correo20@gmail.com","12345", "Cirugía", "url/to/foto1.jpg", true);
+        Veterinario vet2 = new Veterinario("María López", "correo21@gmail.com","54321", "Dermatología", "url/to/foto2.jpg", true);
+        Veterinario vet3 = new Veterinario("Roberto Díaz", "correo22@gmail.com","56789", "Oncología", "url/to/foto3.jpg", true);
+        Veterinario vet4 = new Veterinario("Laura García", "correo23@gmail.com","67890", "Oftalmología", "url/to/foto4.jpg", true);
         veterinarioRepository.save(vet1);
         veterinarioRepository.save(vet2);
         veterinarioRepository.save(vet3);
@@ -373,7 +378,16 @@ public class DataInitializer {
         tratamientoRepository.save(tratamiento8);
         tratamientoRepository.save(tratamiento9);
         tratamientoRepository.save(tratamiento10);
+
+            Administrador admin = new Administrador();
+            admin.setNombre("Samuel");
+            admin.setCorreo("samuel@example.com");
+            admin.setContrasena("12345"); 
+            admin.setTelefono("1234567890");
+            
+            administradorRepository.save(admin);
         };
+
     }
 
         private void loadMedicamentosFromExcel(String fileName) {
