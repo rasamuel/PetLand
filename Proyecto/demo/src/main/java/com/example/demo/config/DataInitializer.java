@@ -338,34 +338,29 @@ public class DataInitializer {
     
         loadMedicamentosFromExcel("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
         // Crear medicamentos de ejemplo
-        Medicamento med1 = new Medicamento("Antibiótico", 500f, 750f, 100, 30);
-        Medicamento med2 = new Medicamento("Vacuna", 300f, 500f, 150, 50);
-        Medicamento med3 = new Medicamento("Analgésico", 200f, 350f, 80, 20);
-        Medicamento med4 = new Medicamento("Desparasitante", 150f, 250f, 120, 60);
-        medicamentoRepository.save(med1);
-        medicamentoRepository.save(med2);
-        medicamentoRepository.save(med3);
-        medicamentoRepository.save(med4);
+        List<Medicamento> medicamentos = medicamentoRepository.findAll();
         
         // Crear fechas explícitas
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha1 = dateFormat.parse("2023-09-01");
-        Date fecha2 = dateFormat.parse("2023-08-15");
-        Date fecha3 = dateFormat.parse("2023-07-10");
-        Date fecha4 = dateFormat.parse("2023-06-25");
-        Date fecha5 = dateFormat.parse("2023-05-30");
+        Date fechaActual = new Date();
         
+        // Formatear la fecha actual como cadena
+        String fechaFormateada = dateFormat.format(fechaActual);
+        
+        // Convertir la cadena formateada nuevamente a Date
+        Date fecha = dateFormat.parse(fechaFormateada);
+
         // Crear tratamientos de ejemplo
-        Tratamiento tratamiento1 = new Tratamiento(null, fecha1, 2, med1, pet1, vet1);
-        Tratamiento tratamiento2 = new Tratamiento(null, fecha2, 1, med2, pet2, vet2);
-        Tratamiento tratamiento3 = new Tratamiento(null, fecha3, 1, med3, pet3, vet3);
-        Tratamiento tratamiento4 = new Tratamiento(null, fecha4, 2, med4, pet4, vet4);
-        Tratamiento tratamiento5 = new Tratamiento(null, fecha5, 3, med1, pet5, vet1);
-        Tratamiento tratamiento6 = new Tratamiento(null, fecha1, 1, med2, pet1, vet2);
-        Tratamiento tratamiento7 = new Tratamiento(null, fecha2, 2, med3, pet2, vet3);
-        Tratamiento tratamiento8 = new Tratamiento(null, fecha3, 1, med4, pet3, vet4);
-        Tratamiento tratamiento9 = new Tratamiento(null, fecha4, 3, med1, pet4, vet1);
-        Tratamiento tratamiento10 = new Tratamiento(null, fecha5, 2, med2, pet5, vet2);
+        Tratamiento tratamiento1 = new Tratamiento(null, fecha, 1, medicamentos.get(0), pet1, vet1);
+        Tratamiento tratamiento2 = new Tratamiento(null, fecha, 1, medicamentos.get(1), pet2, vet2);
+        Tratamiento tratamiento3 = new Tratamiento(null, fecha, 1, medicamentos.get(2), pet3, vet3);
+        Tratamiento tratamiento4 = new Tratamiento(null, fecha, 1, medicamentos.get(3), pet4, vet4);
+        Tratamiento tratamiento5 = new Tratamiento(null, fecha, 1, medicamentos.get(4), pet5, vet1);
+        Tratamiento tratamiento6 = new Tratamiento(null, fecha, 1, medicamentos.get(5), pet1, vet2);
+        Tratamiento tratamiento7 = new Tratamiento(null, fecha, 1, medicamentos.get(6), pet2, vet3);
+        Tratamiento tratamiento8 = new Tratamiento(null, fecha, 1, medicamentos.get(7), pet3, vet4);
+        Tratamiento tratamiento9 = new Tratamiento(null, fecha, 1, medicamentos.get(8), pet4, vet1);
+        Tratamiento tratamiento10 = new Tratamiento(null, fecha, 1, medicamentos.get(9), pet5, vet2);
         
         // Guardar los tratamientos en la base de datos
         tratamientoRepository.save(tratamiento1);
