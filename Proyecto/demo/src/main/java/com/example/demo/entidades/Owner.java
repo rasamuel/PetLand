@@ -23,8 +23,7 @@ public class Owner {
 
     public Owner() {}
 
-    public Owner(Long id, String nombre, String cedula, String correo, String celular) {
-        this.id = id;
+    public Owner(String nombre, String cedula, String correo, String celular) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.correo = correo;

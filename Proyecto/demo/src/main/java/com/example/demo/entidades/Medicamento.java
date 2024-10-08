@@ -24,7 +24,9 @@ public class Medicamento {
         unidadesDisponibles = i;
         unidadesVendidas = j;
     }
-
+    public Medicamento(){
+        
+    }
     // Getters y Setters
     public Long getId() {
         return id;

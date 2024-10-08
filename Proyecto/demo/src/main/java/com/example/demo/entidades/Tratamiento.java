@@ -4,8 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.util.Date;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 public class Tratamiento {
@@ -22,9 +26,13 @@ public class Tratamiento {
     private Medicamento medicamento;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.SET_NULL) 
+    @JoinColumn(name = "mascota_id", nullable = true)
     private Pet mascota;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.SET_NULL) 
+    @JoinColumn(name = "veterinario_id", nullable = true)
     private Veterinario veterinario;
 
     public Tratamiento(Long id, Date fecha, int cantidad, Medicamento medicamento, Pet mascota, Veterinario veterinario) {
@@ -35,6 +43,10 @@ public class Tratamiento {
         this.mascota = mascota;
         this.veterinario = veterinario;
     }
+
+    public Tratamiento(){
+    }
+    
     // Getters y Setters
     public Long getId() {
         return id;

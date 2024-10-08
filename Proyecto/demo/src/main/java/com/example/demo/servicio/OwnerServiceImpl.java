@@ -1,8 +1,9 @@
 package com.example.demo.servicio;
 
 import com.example.demo.entidades.Owner;
-import com.example.demo.entidades.Pet;
 import com.example.demo.repositorio.OwnerRepository;
+import com.example.demo.repositorio.PetRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Autowired
     private OwnerRepository ownerRepository;
+
 
     @Override
     public List<Owner> getAllOwners() {

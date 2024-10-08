@@ -250,6 +250,7 @@ public class DataInitializer {
                 String telefonoFormateado = faker.numerify("(###) ###-####");
                 owner.setCelular(telefonoFormateado);
                 ownerRepository.save(owner);
+                
 
                 // Crear 2 mascotas por propietario
                 for (int j = 1; j <= 2; j++) {
@@ -278,6 +279,28 @@ public class DataInitializer {
                     petRepository.save(pet);
                 }
             }
+            Owner owner1 = new Owner( "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908");
+            Owner owner2 = new Owner("Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852");
+            Owner owner3 = new Owner( "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791");
+            Owner owner4 = new Owner("Ana", "5556789", "ana.morales@example.com", "(616) 795-2420");
+            Owner owner5 = new Owner("Elena", "5553456", "elena.garcia@example.com", "(520) 840-5545");
+            ownerRepository.save(owner1);
+            ownerRepository.save(owner2);
+            ownerRepository.save(owner3);
+            ownerRepository.save(owner4);
+            ownerRepository.save(owner5);
+            
+            // Crear mascotas de ejemplo
+            Pet pet1 = new Pet(null, "Bobby", "Golden Retriever", "url/to/pet1.jpg", 3, 25.5, "Ninguna", true, owner1);
+            Pet pet2 = new Pet(null, "Mia", "Siames", "url/to/pet2.jpg", 2, 4.2, "Dermatitis", false, owner2);
+            Pet pet3 = new Pet(null, "Max", "Bulldog", "url/to/pet3.jpg", 5, 22.0, "Alergias", true, owner3);
+            Pet pet4 = new Pet(null, "Nina", "Labrador", "url/to/pet4.jpg", 4, 27.8, "Ninguna", true, owner4);
+            Pet pet5 = new Pet(null, "Rocky", "Chihuahua", "url/to/pet5.jpg", 6, 5.5, "Cardiopatía", false, owner5);
+            petRepository.save(pet1);
+            petRepository.save(pet2);
+            petRepository.save(pet3);
+            petRepository.save(pet4);
+            petRepository.save(pet5);
             List<Veterinario> veterinarios = List.of(
 
                 new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "url/to/foto2.jpg", true),
@@ -303,28 +326,7 @@ public class DataInitializer {
         
         veterinarios.forEach(veterinarioRepository::save);
 
-        Owner owner1 = new Owner(null, "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908");
-        Owner owner2 = new Owner(null, "Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852");
-        Owner owner3 = new Owner(null, "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791");
-        Owner owner4 = new Owner(null, "Ana", "5556789", "ana.morales@example.com", "(616) 795-2420");
-        Owner owner5 = new Owner(null, "Elena", "5553456", "elena.garcia@example.com", "(520) 840-5545");
-        ownerRepository.save(owner1);
-        ownerRepository.save(owner2);
-        ownerRepository.save(owner3);
-        ownerRepository.save(owner4);
-        ownerRepository.save(owner5);
-        
-        // Crear mascotas de ejemplo
-        Pet pet1 = new Pet(null, "Bobby", "Golden Retriever", "url/to/pet1.jpg", 3, 25.5, "Ninguna", true, owner1);
-        Pet pet2 = new Pet(null, "Mia", "Siames", "url/to/pet2.jpg", 2, 4.2, "Dermatitis", false, owner2);
-        Pet pet3 = new Pet(null, "Max", "Bulldog", "url/to/pet3.jpg", 5, 22.0, "Alergias", true, owner3);
-        Pet pet4 = new Pet(null, "Nina", "Labrador", "url/to/pet4.jpg", 4, 27.8, "Ninguna", true, owner4);
-        Pet pet5 = new Pet(null, "Rocky", "Chihuahua", "url/to/pet5.jpg", 6, 5.5, "Cardiopatía", false, owner5);
-        petRepository.save(pet1);
-        petRepository.save(pet2);
-        petRepository.save(pet3);
-        petRepository.save(pet4);
-        petRepository.save(pet5);
+
         
         // Crear veterinarios de ejemplo
         Veterinario vet1 = new Veterinario("Juan Pérez", "correo20@gmail.com","12345", "Cirugía", "url/to/foto1.jpg", true);
