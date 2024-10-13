@@ -303,7 +303,7 @@ public class DataInitializer {
             petRepository.save(pet5);
             List<Veterinario> veterinarios = List.of(
 
-                new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "url/to/foto2.jpg", true),
+                new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "https://b2472105.smushcdn.com/2472105/wp-content/uploads/2023/09/Poses-Perfil-Profesional-Mujeres-ago.-10-2023-1-819x1024.jpg?lossy=1&strip=1&webp=1", true),
                 new Veterinario("Luis Martínez", "correo2@gmail.com","12345", "Oftalmología", "url/to/foto3.jpg",true),
                 new Veterinario("Carla Rodríguez", "correo3@gmail.com","12345", "Ortopedia", "url/to/foto4.jpg",true),
                 new Veterinario("Miguel Sánchez", "correo4@gmail.com","12345", "Cardiología", "url/to/foto5.jpg",true),

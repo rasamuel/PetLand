@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> {
 
+    Optional<Veterinario> findById(Long id);
+
     List<Veterinario> findByEspecialidad(String especialidad);
 
     List<Veterinario> findByNombre(String nombre);
@@ -24,4 +26,5 @@ public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> 
     
     Optional<Veterinario> findByCorreoAndContrasena(String correo, String contrasena);
     
+    List<Veterinario> findByNombreContainingOrEspecialidadContaining(String nombre, String especialidad);
 }

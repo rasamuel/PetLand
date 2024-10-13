@@ -39,7 +39,7 @@ public class Veterinario {
     public String getCorreo(){
         return correo;
     }
-    public void setCorreo(){
+    public void setCorreo(String correo){
         this.correo = correo;
     }
     public String getContrasena() {
