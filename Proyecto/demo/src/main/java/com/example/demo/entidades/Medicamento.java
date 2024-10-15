@@ -27,6 +27,9 @@ public class Medicamento {
     public Medicamento(){
         
     }
+    public Medicamento(String nombre) {
+        this.nombre = nombre;
+    }
     // Getters y Setters
     public Long getId() {
         return id;

@@ -403,8 +403,8 @@ public class DataInitializer {
 
                     // Read the row data
                     String nombre = row.getCell(0).getStringCellValue();
-                    float precioCompra = (float) row.getCell(1).getNumericCellValue();
-                    float precioVenta = (float) row.getCell(2).getNumericCellValue();
+                    float precioVenta = (float) row.getCell(1).getNumericCellValue();
+                    float precioCompra = (float) row.getCell(2).getNumericCellValue();
                     int unidadesDisponibles = (int) row.getCell(3).getNumericCellValue();
                     int unidadesVendidas = (int) row.getCell(4).getNumericCellValue();
 
