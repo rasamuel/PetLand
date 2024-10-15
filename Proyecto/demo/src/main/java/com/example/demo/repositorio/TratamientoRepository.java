@@ -51,4 +51,8 @@ public interface TratamientoRepository extends JpaRepository<Tratamiento, Long> 
 
     @Query("SELECT COUNT(t) FROM Tratamiento t WHERE t.fecha BETWEEN :start AND :end")
     Long countByFechaBetween(@Param("start") Date start, @Param("end") Date end);
+
+    @Query("SELECT m.nombre, COUNT(t) FROM Tratamiento t JOIN t.medicamento m WHERE t.fecha BETWEEN :start AND :end GROUP BY m.nombre")
+    List<Object[]> countTratamientosPorMedicamento(@Param("start") Date start, @Param("end") Date end);
+
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 
 @Service
 public class MedicamentoServiceImpl implements MedicamentoService {
@@ -68,6 +70,10 @@ public class MedicamentoServiceImpl implements MedicamentoService {
 
     @Override
     public List<Medicamento> obtenerTopMedicamentos() {
-        return medicamentoRepository.findTop3ByOrderByUnidadesVendidasDesc();
+        List<Medicamento> topMedicamentos = medicamentoRepository.findTop3ByOrderByUnidadesVendidasDesc();
+        List<Medicamento> top3Medicamentos = topMedicamentos.stream()
+        .limit(3)
+        .collect(Collectors.toList());
+        return top3Medicamentos;
     }
 }
