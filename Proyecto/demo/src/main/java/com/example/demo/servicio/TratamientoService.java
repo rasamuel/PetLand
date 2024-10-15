@@ -11,4 +11,6 @@ public interface TratamientoService {
 
     // Obtener todos los tratamientos realizados por un veterinario
     List<Tratamiento> getTratamientosByVeterinario(Long veterinarioId);
+
+    List<Tratamiento> getTratamientosPorMascota(Long mascotaId);
 }

@@ -40,4 +40,9 @@ public class TratamientoServiceImpl implements TratamientoService {
     public List<Tratamiento> getTratamientosByVeterinario(Long veterinarioId) {
         return tratamientoRepository.findByVeterinarioId(veterinarioId);
     }
+    @Override
+    public List<Tratamiento> getTratamientosPorMascota(Long mascotaId) {
+        // Aquí deberías implementar la lógica para obtener los tratamientos de la mascota
+        return tratamientoRepository.findByMascotaId(mascotaId); // Suponiendo que tienes un repositorio con este método
+    }
 }

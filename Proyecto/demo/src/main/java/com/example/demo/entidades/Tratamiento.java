@@ -23,6 +23,8 @@ public class Tratamiento {
     private int cantidad;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.SET_NULL)
+    @JoinColumn(name = "medicamento_id", nullable = false)
     private Medicamento medicamento;
 
     @ManyToOne

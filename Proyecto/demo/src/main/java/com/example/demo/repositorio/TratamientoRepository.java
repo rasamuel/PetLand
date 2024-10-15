@@ -34,4 +34,6 @@ public interface TratamientoRepository extends JpaRepository<Tratamiento, Long> 
     List<Tratamiento> findByMedicamentoAndFechaBetween(Medicamento medicamento, Date startDate, Date endDate);
 
     List<Tratamiento> findByVeterinarioId(Long veterinarioId);
+
+    List<Tratamiento> findByMascotaId(Long mascotaId);
 }

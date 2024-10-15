@@ -64,11 +64,15 @@ public ResponseEntity<?> crearTratamiento(@RequestBody Tratamiento tratamiento) 
     return ResponseEntity.ok(nuevoTratamiento);
 }
 
-    
-    
     // Obtener todos los tratamientos de un veterinario específico
-    @GetMapping("/veterinario/{veterinarioId}")
+    @GetMapping("/tratamiento/veterinario/{veterinarioId}")
     public List<Tratamiento> getTratamientosByVeterinario(@PathVariable Long veterinarioId) {
         return tratamientoService.getTratamientosByVeterinario(veterinarioId);
     }
+
+    @GetMapping("/tratamiento/mascota/{mascotaId}")
+    public List<Tratamiento> getTratamientosPorMascota(@PathVariable Long mascotaId) {
+    return tratamientoService.getTratamientosPorMascota(mascotaId); // Llama al servicio para obtener los tratamientos
+}
+
 }
