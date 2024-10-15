@@ -45,6 +45,7 @@ public class Tratamiento {
     }
 
     public Tratamiento(){
+        this.fecha = new Date();
     }
     
     // Getters y Setters
