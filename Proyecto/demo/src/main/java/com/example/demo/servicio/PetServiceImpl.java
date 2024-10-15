@@ -115,5 +115,15 @@ public class PetServiceImpl implements PetService {
     public List<Pet> getInactivePets() {
         return petRepository.findByEstado(false);
     }
+
+    @Override
+    public Long contarTotalMascotas() {
+        return petRepository.count();
+    }
+
+    @Override
+    public Long contarMascotasActivas() {
+        return petRepository.countByEstado(true); // Suponiendo que "true" significa que está activa
+    }
 }
 

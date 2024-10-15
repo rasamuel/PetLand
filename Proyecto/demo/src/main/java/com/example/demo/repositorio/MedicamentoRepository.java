@@ -2,6 +2,7 @@ package com.example.demo.repositorio;
 
 import com.example.demo.entidades.Medicamento;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -27,4 +28,16 @@ public interface MedicamentoRepository extends JpaRepository<Medicamento, Long> 
     List<Medicamento> findByUnidadesDisponiblesBetween(int minUnidadesDisponibles, int maxUnidadesDisponibles);
 
     List<Medicamento> findByNombreContainingOrPrecioVentaBetween(String nombreKeyword, float minPrecioVenta, float maxPrecioVenta);
+
+    // Método para calcular las ventas totales
+    @Query("SELECT SUM(m.precioVenta * m.unidadesVendidas) FROM Medicamento m")
+    Double sumVentasTotales();
+
+    // Método para calcular las ganancias totales
+    @Query("SELECT SUM((m.precioVenta - m.precioCompra) * m.unidadesVendidas) FROM Medicamento m")
+    Double sumGananciasTotales();
+
+    // Método para obtener el top 3 medicamentos con más unidades vendidas
+    @Query("SELECT m FROM Medicamento m ORDER BY m.unidadesVendidas DESC")
+    List<Medicamento> findTop3ByOrderByUnidadesVendidasDesc();
 }

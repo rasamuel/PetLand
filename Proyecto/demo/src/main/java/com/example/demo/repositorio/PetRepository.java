@@ -46,4 +46,10 @@ public interface PetRepository extends JpaRepository<Pet, Long> {
     List<Pet> findAllByOrderByNombreAsc();
 
     List<Pet> findByRazaContaining(String raza);
+
+    Long countByEstado(boolean estado); // Cambiado de 'activo' a 'estado'
+
+    // Opción alternativa usando JPQL
+    @Query("SELECT COUNT(v) FROM Veterinario v WHERE v.estado = :estado")
+    Long countByEstadoJPQL(@Param("estado") boolean estado);
 }

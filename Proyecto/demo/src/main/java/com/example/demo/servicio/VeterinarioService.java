@@ -28,5 +28,9 @@ public interface VeterinarioService {
     // Buscar veterinarios por nombre o especialidad
     List<Veterinario> searchVeterinarios(String query);
 
-    public Optional<Veterinario> findById(Long id);
+    Optional<Veterinario> findById(Long id);
+
+    Long contarVeterinariosActivos();
+    
+    Long contarVeterinariosInactivos();
 }

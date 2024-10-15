@@ -55,4 +55,19 @@ public class MedicamentoServiceImpl implements MedicamentoService {
     public List<Medicamento> searchMedicamentos(String query) {
         return medicamentoRepository.findByNombreContaining(query);
     }
+
+    @Override
+    public Double calcularVentasTotales() {
+        return medicamentoRepository.sumVentasTotales();
+    }
+
+    @Override
+    public Double calcularGananciasTotales() {
+        return medicamentoRepository.sumGananciasTotales();
+    }
+
+    @Override
+    public List<Medicamento> obtenerTopMedicamentos() {
+        return medicamentoRepository.findTop3ByOrderByUnidadesVendidasDesc();
+    }
 }

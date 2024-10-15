@@ -72,4 +72,14 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     public Optional<Veterinario> findById(Long id) {
         return veterinarioRepository.findById(id);
     }
+
+    @Override
+    public Long contarVeterinariosActivos() {
+        return veterinarioRepository.countByEstado(true); // Suponiendo que "true" significa activo
+    }
+
+    @Override
+    public Long contarVeterinariosInactivos() {
+        return veterinarioRepository.countByEstado(false); // Suponiendo que "false" significa inactivo
+    }
 }

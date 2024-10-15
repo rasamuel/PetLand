@@ -23,4 +23,6 @@ public interface PetService {
     boolean deactivatePet(Long id);
     List<Pet> getActivePets();
     List<Pet> getInactivePets();
+    Long contarTotalMascotas();
+    Long contarMascotasActivas();
 }

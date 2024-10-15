@@ -12,4 +12,7 @@ public interface MedicamentoService {
     Optional<Medicamento> updateMedicamento(Long id, Medicamento medicamentoDetails);
     boolean deleteMedicamento(Long id);
     List<Medicamento> searchMedicamentos(String query);
+    Double calcularVentasTotales();
+    Double calcularGananciasTotales();
+    List<Medicamento> obtenerTopMedicamentos();
 }
