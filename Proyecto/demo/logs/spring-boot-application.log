@@ -1,0 +1,137 @@
+2024-10-21T23:06:22.505-05:00  INFO 7384 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 7384 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:06:22.507-05:00  INFO 7384 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:06:23.006-05:00  INFO 7384 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:06:23.106-05:00  INFO 7384 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:06:23.170-05:00  INFO 7384 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:06:23.406-05:00  INFO 7384 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:eb63dce6-128b-41f1-8ffe-0f42772e6e2d;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:06:23.739-05:00  INFO 7384 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:06:23.815-05:00  INFO 7384 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:06:23.867-05:00  INFO 7384 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:06:24.212-05:00  INFO 7384 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:06:24.276-05:00  WARN 7384 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:06:25.612-05:00  INFO 7384 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:06:25.675-05:00  INFO 7384 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:06:26.144-05:00  INFO 7384 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:06:27.409-05:00  INFO 7384 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.361 seconds (process running for 6.483)
+2024-10-21T23:06:27.834-05:00  WARN 7384 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-10-21T23:06:27.835-05:00 ERROR 7384 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Violación de una restricción de Integridad Referencial: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"
+Referential integrity constraint violation: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into pet (edad,enfermedad,estado,image_url,nombre,owner_id,peso,raza,id) values (?,?,?,?,?,?,?,?,default) [23506-224]
+2024-10-21T23:06:27.882-05:00 ERROR 7384 --- [demo] [main] org.hibernate.AssertionFailure           : HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.example.demo.entidades.Pet entry (don't flush the Session after an exception occurs)
+2024-10-21T23:06:27.910-05:00  INFO 7384 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:06:52.117-05:00  INFO 19624 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 19624 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:06:52.118-05:00  INFO 19624 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:06:52.729-05:00  INFO 19624 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:06:52.871-05:00  INFO 19624 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 129 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:06:52.979-05:00  INFO 19624 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:06:53.306-05:00  INFO 19624 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:3c06e83d-741c-4972-b620-d1c0f99f0e3d;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:06:53.755-05:00  INFO 19624 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:06:53.844-05:00  INFO 19624 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:06:53.901-05:00  INFO 19624 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:06:54.330-05:00  INFO 19624 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:06:54.406-05:00  WARN 19624 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:06:55.944-05:00  INFO 19624 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:06:56.022-05:00  INFO 19624 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:06:56.534-05:00  INFO 19624 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:06:58.089-05:00  INFO 19624 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 6.408 seconds (process running for 7.631)
+2024-10-21T23:06:58.622-05:00  WARN 19624 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-10-21T23:06:58.623-05:00 ERROR 19624 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Violación de una restricción de Integridad Referencial: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"
+Referential integrity constraint violation: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into pet (edad,enfermedad,estado,image_url,nombre,owner_id,peso,raza,id) values (?,?,?,?,?,?,?,?,default) [23506-224]
+2024-10-21T23:06:58.738-05:00 ERROR 19624 --- [demo] [main] org.hibernate.AssertionFailure           : HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.example.demo.entidades.Pet entry (don't flush the Session after an exception occurs)
+2024-10-21T23:06:58.796-05:00  INFO 19624 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:07:46.953-05:00  INFO 16292 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 16292 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:07:46.955-05:00  INFO 16292 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:07:47.591-05:00  INFO 16292 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:07:47.685-05:00  INFO 16292 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:07:47.748-05:00  INFO 16292 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:07:48.109-05:00  INFO 16292 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:fac63216-3e4e-4fc1-9e0f-6f789425adb8;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:07:48.493-05:00  INFO 16292 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:07:48.557-05:00  INFO 16292 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:07:48.599-05:00  INFO 16292 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:07:48.994-05:00  INFO 16292 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:07:49.071-05:00  WARN 16292 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:07:50.359-05:00  INFO 16292 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:07:50.432-05:00  INFO 16292 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:07:50.889-05:00  INFO 16292 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:07:52.093-05:00  INFO 16292 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.659 seconds (process running for 6.844)
+2024-10-21T23:07:52.577-05:00  WARN 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-10-21T23:07:52.577-05:00 ERROR 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Violación de una restricción de Integridad Referencial: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"
+Referential integrity constraint violation: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into pet (edad,enfermedad,estado,image_url,nombre,owner_id,peso,raza,id) values (?,?,?,?,?,?,?,?,default) [23506-224]
+2024-10-21T23:07:52.586-05:00 ERROR 16292 --- [demo] [main] org.hibernate.AssertionFailure           : HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.example.demo.entidades.Pet entry (don't flush the Session after an exception occurs)
+2024-10-21T23:07:52.607-05:00  WARN 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-10-21T23:07:52.607-05:00 ERROR 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Violación de una restricción de Integridad Referencial: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"
+Referential integrity constraint violation: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into pet (edad,enfermedad,estado,image_url,nombre,owner_id,peso,raza,id) values (?,?,?,?,?,?,?,?,default) [23506-224]
+2024-10-21T23:07:52.611-05:00 ERROR 16292 --- [demo] [main] org.hibernate.AssertionFailure           : HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.example.demo.entidades.Pet entry (don't flush the Session after an exception occurs)
+2024-10-21T23:07:52.626-05:00  WARN 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-10-21T23:07:52.626-05:00 ERROR 16292 --- [demo] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Violación de una restricción de Integridad Referencial: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"
+Referential integrity constraint violation: "FK7QFTI9YBA86TGFE9OOBEQXFXG: PUBLIC.PET FOREIGN KEY(OWNER_ID) REFERENCES PUBLIC.OWNER(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into pet (edad,enfermedad,estado,image_url,nombre,owner_id,peso,raza,id) values (?,?,?,?,?,?,?,?,default) [23506-224]
+2024-10-21T23:07:52.631-05:00 ERROR 16292 --- [demo] [main] org.hibernate.AssertionFailure           : HHH000099: an assertion failure occurred (this may indicate a bug in Hibernate, but is more likely due to unsafe use of the session): org.hibernate.AssertionFailure: null id in com.example.demo.entidades.Pet entry (don't flush the Session after an exception occurs)
+2024-10-21T23:07:52.654-05:00  INFO 16292 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:03.967-05:00  INFO 25360 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 25360 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:08:03.968-05:00  INFO 25360 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:08:04.608-05:00  INFO 25360 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:08:04.714-05:00  INFO 25360 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:08:04.787-05:00  INFO 25360 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:08:05.153-05:00  INFO 25360 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:bb6a6e89-bb27-4b8c-abdb-7c6f134de520;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:08:05.475-05:00  INFO 25360 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:08:05.530-05:00  INFO 25360 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:08:05.565-05:00  INFO 25360 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:08:05.900-05:00  INFO 25360 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:08:05.962-05:00  WARN 25360 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:08:07.254-05:00  INFO 25360 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:08:07.335-05:00  INFO 25360 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:07.835-05:00  INFO 25360 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:08:08.989-05:00  INFO 25360 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.507 seconds (process running for 6.526)
+2024-10-21T23:08:09.593-05:00  INFO 25360 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:15.259-05:00  INFO 24080 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 24080 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:08:15.263-05:00  INFO 24080 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:08:15.969-05:00  INFO 24080 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:08:16.088-05:00  INFO 24080 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:08:16.153-05:00  INFO 24080 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:08:16.486-05:00  INFO 24080 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:17173d01-3fc1-42aa-9215-e8b043f63e8a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:08:16.811-05:00  INFO 24080 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:08:16.871-05:00  INFO 24080 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:08:16.906-05:00  INFO 24080 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:08:17.240-05:00  INFO 24080 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:08:17.309-05:00  WARN 24080 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:08:18.605-05:00  INFO 24080 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:08:18.666-05:00  INFO 24080 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:19.248-05:00  INFO 24080 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:08:20.498-05:00  INFO 24080 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.757 seconds (process running for 6.94)
+2024-10-21T23:08:21.004-05:00  INFO 24080 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:24.367-05:00  INFO 23152 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 23152 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:08:24.369-05:00  INFO 23152 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:08:24.909-05:00  INFO 23152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:08:25.035-05:00  INFO 23152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:08:25.101-05:00  INFO 23152 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:08:25.377-05:00  INFO 23152 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:c25e4ebe-e23b-4dbb-b3b1-d7d91ee50747;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:08:25.775-05:00  INFO 23152 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:08:25.840-05:00  INFO 23152 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:08:25.889-05:00  INFO 23152 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:08:26.236-05:00  INFO 23152 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:08:26.297-05:00  WARN 23152 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:08:27.523-05:00  INFO 23152 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:08:27.600-05:00  INFO 23152 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:28.301-05:00  INFO 23152 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:08:29.467-05:00  INFO 23152 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.578 seconds (process running for 6.606)
+2024-10-21T23:08:30.187-05:00  INFO 23152 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:34.269-05:00  INFO 23872 --- [demo] [main] com.example.demo.PetRepositoryTests      : Starting PetRepositoryTests using Java 17.0.12 with PID 23872 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-21T23:08:34.271-05:00  INFO 23872 --- [demo] [main] com.example.demo.PetRepositoryTests      : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T23:08:34.843-05:00  INFO 23872 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T23:08:34.949-05:00  INFO 23872 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 6 JPA repository interfaces.
+2024-10-21T23:08:35.025-05:00  INFO 23872 --- [demo] [main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2024-10-21T23:08:35.384-05:00  INFO 23872 --- [demo] [main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f2e6eedd-7c3e-4417-aad3-94d20417eb90;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2024-10-21T23:08:35.761-05:00  INFO 23872 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T23:08:35.835-05:00  INFO 23872 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-21T23:08:35.874-05:00  INFO 23872 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T23:08:36.232-05:00  INFO 23872 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T23:08:36.291-05:00  WARN 23872 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T23:08:37.537-05:00  INFO 23872 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T23:08:37.623-05:00  INFO 23872 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T23:08:38.142-05:00  INFO 23872 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T23:08:39.355-05:00  INFO 23872 --- [demo] [main] com.example.demo.PetRepositoryTests      : Started PetRepositoryTests in 5.591 seconds (process running for 6.951)
+2024-10-21T23:08:40.084-05:00  INFO 23872 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
