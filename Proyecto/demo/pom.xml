@@ -73,6 +73,28 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>5.2.3</version>
 		</dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.8.2</version> <!-- Verifica si hay una versión más reciente -->
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Mockito -->
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>4.0.0</version> <!-- Verifica si hay una versión más reciente -->
+        <scope>test</scope>
+    </dependency>
+
+    <!-- AssertJ -->
+    <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.21.0</version> <!-- Verifica si hay una versión más reciente -->
+        <scope>test</scope>
+    </dependency>
 	</dependencies>
 
 	<build>
