@@ -1,6 +1,5 @@
 package com.example.demo;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.demo.entidades.Owner;
@@ -87,5 +86,41 @@ public class PetRepositoryTests {
     public void testDeletePet() {
         petRepository.delete(pet);
         assertThat(petRepository.findById(pet.getId())).isNotPresent();
+    }
+
+    @Test
+    public void testFindByNombre() {
+        List<Pet> result = petRepository.findByNombre("Fido");
+        assertThat(result).hasSize(1).contains(pet);
+    }
+
+    @Test
+    public void testFindByRaza() {
+        List<Pet> result = petRepository.findByRaza("Labrador");
+        assertThat(result).hasSize(1).contains(pet);
+    }
+
+    @Test
+    public void testFindByOwnerId() {
+        List<Pet> result = petRepository.findByOwnerId(pet.getOwner().getId());
+        assertThat(result).hasSize(1).contains(pet);
+    }
+
+    @Test
+    public void testFindAllByOrderByNombreAsc() {
+        Pet pet2 = new Pet();
+        pet2.setNombre("Bella");
+        pet2.setRaza("Bulldog");
+        pet2.setEstado(true);
+        petRepository.save(pet2);
+
+        List<Pet> result = petRepository.findAllByOrderByNombreAsc();
+        assertThat(result).extracting(Pet::getNombre).containsExactly("Bella", "Fido");
+    }
+
+    @Test
+    public void testCountByEstado() {
+        long count = petRepository.countByEstado(true);
+        assertThat(count).isEqualTo(1); // Suponiendo que sólo hay un estado verdadero
     }
 }
