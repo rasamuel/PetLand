@@ -24,9 +24,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-public class UseCaseTest {
+public class UseCase1Test {
 
-    private final String BASE_URL = "http://localhost:4200"; // Cambia esto según tu configuración
+    private final String BASE_URL = "http://localhost:4200"; 
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -86,6 +86,19 @@ public class UseCaseTest {
         WebElement inputTelefono = driver.findElement(By.id("celular"));
         WebElement btnRegistrarCliente = driver.findElement(By.id("btnRegistrarCliente"));
 
+        // Rellenar el formulario del dueño con datos erroneos
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
+        inputNombre.sendKeys("Goku");
+        inputCedula.sendKeys("123456789");
+        inputCorreoOwner.sendKeys("dbzgmail.com");
+        inputTelefono.sendKeys("(3390) 458-3742");
+        btnRegistrarCliente.click();
+
+        inputNombre.clear();
+        inputCedula.clear();
+        inputCorreoOwner.clear();
+        inputTelefono.clear();
+
         // Rellenar el formulario del dueño
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
         inputNombre.sendKeys("Goku");
@@ -131,10 +144,34 @@ public class UseCaseTest {
         // Seleccionar un dueño
         selectOwner.selectByValue("56");
         // 8. Enviar el formulario
-        WebElement btnAgregarMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAgregarMascota")));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnAgregarMascota); // Desplazarse al botón
+        WebElement btnAgregarMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAgregarMascota"))); // Asegúrate de que el ID sea correcto
 
-        btnAgregarMascota.click();
+        // Opción 1: Esperar a que el botón esté visible y clickeable
+        btnAgregarMascota = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnAgregarMascota"))); // Opción de espera
+         
+        // Opción 2: Desplazarse al botón
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnAgregarMascota);
+        
+        // Opción 3: Hacer clic usando JavaScript (si el clic regular no funciona)
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", btnAgregarMascota);
+        
+        wait.until(ExpectedConditions.urlToBe(BASE_URL + "/pets")); // Cambia a la URL de lista de mascotas
+        Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/pets");
+
+        // 9. Ir a al login de los propietarios
+        WebElement btnLoginOwner = driver.findElement(By.id("btnLoginOwner"));
+        btnLoginOwner.click();
+
+        wait.until(ExpectedConditions.urlToBe(BASE_URL + "/login/owner")); // Cambia a la URL del login
+        Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/login/owner");
+
+        // 10. Iniciar sesión con un propietario existente
+        WebElement inputCedulaOwner = driver.findElement(By.id("cedula"));
+        WebElement btnIniciarSesion = driver.findElement(By.id("btnIniciarSesion"));
+
+        // Rellenar el formulario de inicio de sesión
+        inputCedulaOwner.sendKeys("123456789");
+        btnIniciarSesion.click();
     }
 
     @AfterEach

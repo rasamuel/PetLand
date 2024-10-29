@@ -2938,3 +2938,795 @@ Caused by: java.net.BindException: Address already in use: bind
 2024-10-28T12:25:25.288-05:00  INFO 26360 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-10-28T12:25:25.288-05:00  INFO 26360 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2024-10-28T12:25:25.290-05:00  INFO 26360 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T17:48:52.961-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 19072 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:48:52.963-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:48:54.012-05:00  INFO 19072 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:48:54.139-05:00  INFO 19072 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:48:55.107-05:00  INFO 19072 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:48:55.132-05:00  INFO 19072 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:48:55.133-05:00  INFO 19072 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:48:55.307-05:00  INFO 19072 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:48:55.308-05:00  INFO 19072 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2324 ms
+2024-10-28T17:48:55.352-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T17:48:55.677-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:48:55.681-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T17:48:55.695-05:00  INFO 19072 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:48:55.934-05:00  INFO 19072 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:48:56.076-05:00  INFO 19072 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T17:48:56.153-05:00  INFO 19072 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:48:56.866-05:00  INFO 19072 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:48:56.993-05:00  WARN 19072 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:48:58.226-05:00  INFO 19072 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:48:58.330-05:00  INFO 19072 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:48:58.969-05:00  INFO 19072 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T17:49:00.597-05:00  WARN 19072 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:49:01.533-05:00  WARN 19072 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:49:02.131-05:00  INFO 19072 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:49:02.159-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 9.723 seconds (process running for 11.514)
+2024-10-28T17:49:05.102-05:00  INFO 19072 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:49:05.107-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T17:49:05.113-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T17:49:05.128-05:00  INFO 19072 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T17:49:05.195-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 19072 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:49:05.197-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:49:05.522-05:00  INFO 19072 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:49:05.559-05:00  INFO 19072 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:49:05.702-05:00  INFO 19072 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:49:05.704-05:00  INFO 19072 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:49:05.705-05:00  INFO 19072 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:49:05.781-05:00  INFO 19072 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:49:05.782-05:00  INFO 19072 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 578 ms
+2024-10-28T17:49:05.818-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T17:49:05.823-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:49:05.823-05:00  INFO 19072 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T17:49:05.824-05:00  INFO 19072 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:49:05.864-05:00  INFO 19072 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:49:05.873-05:00  INFO 19072 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:49:05.908-05:00  INFO 19072 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:49:05.911-05:00  WARN 19072 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:49:06.143-05:00  INFO 19072 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:49:06.155-05:00  INFO 19072 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:49:06.376-05:00  WARN 19072 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:49:06.550-05:00  WARN 19072 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:49:06.647-05:00  INFO 19072 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:49:06.653-05:00  INFO 19072 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.525 seconds (process running for 16.007)
+2024-10-28T17:49:08.571-05:00  INFO 19072 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T17:49:08.583-05:00  INFO 19072 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T17:49:10.108-05:00  WARN 19072 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T17:49:10.109-05:00  WARN 19072 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T17:49:14.982-05:00  INFO 19072 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:49:14.983-05:00  INFO 19072 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T17:49:14.984-05:00  INFO 19072 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T17:55:03.986-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 7500 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:55:03.989-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:55:04.901-05:00  INFO 7500 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:55:05.046-05:00  INFO 7500 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:55:05.949-05:00  INFO 7500 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:55:05.972-05:00  INFO 7500 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:55:05.973-05:00  INFO 7500 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:55:06.105-05:00  INFO 7500 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:55:06.105-05:00  INFO 7500 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2092 ms
+2024-10-28T17:55:06.158-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T17:55:06.436-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:55:06.438-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T17:55:06.450-05:00  INFO 7500 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:55:06.760-05:00  INFO 7500 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:55:06.901-05:00  INFO 7500 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T17:55:07.004-05:00  INFO 7500 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:55:07.768-05:00  INFO 7500 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:55:07.838-05:00  WARN 7500 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:55:08.912-05:00  INFO 7500 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:55:08.979-05:00  INFO 7500 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:55:09.445-05:00  INFO 7500 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T17:55:10.735-05:00  WARN 7500 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:55:11.430-05:00  WARN 7500 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:55:12.180-05:00  INFO 7500 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:55:12.196-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 8.623 seconds (process running for 9.764)
+2024-10-28T17:55:14.593-05:00  INFO 7500 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:55:14.601-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T17:55:14.607-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T17:55:14.624-05:00  INFO 7500 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T17:55:14.682-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 7500 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:55:14.683-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:55:15.051-05:00  INFO 7500 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:55:15.091-05:00  INFO 7500 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:55:15.175-05:00  INFO 7500 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:55:15.176-05:00  INFO 7500 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:55:15.177-05:00  INFO 7500 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:55:15.222-05:00  INFO 7500 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:55:15.222-05:00  INFO 7500 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 532 ms
+2024-10-28T17:55:15.234-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T17:55:15.236-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:55:15.237-05:00  INFO 7500 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T17:55:15.237-05:00  INFO 7500 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:55:15.272-05:00  INFO 7500 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:55:15.279-05:00  INFO 7500 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:55:15.308-05:00  INFO 7500 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:55:15.312-05:00  WARN 7500 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:55:15.497-05:00  INFO 7500 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:55:15.519-05:00  INFO 7500 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:55:15.786-05:00  WARN 7500 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:55:15.928-05:00  WARN 7500 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:55:15.992-05:00  INFO 7500 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:55:15.999-05:00  INFO 7500 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.376 seconds (process running for 13.567)
+2024-10-28T17:55:17.429-05:00  INFO 7500 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T17:55:17.480-05:00  INFO 7500 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T17:55:18.710-05:00  WARN 7500 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T17:55:18.711-05:00  WARN 7500 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T17:55:20.488-05:00  INFO 7500 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T17:55:20.489-05:00  INFO 7500 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T17:55:20.490-05:00  INFO 7500 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-28T17:55:25.067-05:00  INFO 7500 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:55:25.068-05:00  INFO 7500 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T17:55:25.069-05:00  INFO 7500 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T17:59:18.585-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 16024 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:59:18.588-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:59:19.583-05:00  INFO 16024 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:59:19.783-05:00  INFO 16024 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 183 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:59:21.415-05:00  INFO 16024 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:59:21.437-05:00  INFO 16024 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:59:21.438-05:00  INFO 16024 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:59:21.601-05:00  INFO 16024 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:59:21.602-05:00  INFO 16024 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2986 ms
+2024-10-28T17:59:21.659-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T17:59:21.968-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:59:21.971-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T17:59:21.988-05:00  INFO 16024 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:59:22.213-05:00  INFO 16024 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:59:22.347-05:00  INFO 16024 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T17:59:22.415-05:00  INFO 16024 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:59:23.066-05:00  INFO 16024 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:59:23.136-05:00  WARN 16024 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:59:24.237-05:00  INFO 16024 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:59:24.310-05:00  INFO 16024 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:59:24.730-05:00  INFO 16024 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T17:59:25.878-05:00  WARN 16024 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:59:26.631-05:00  WARN 16024 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:59:27.224-05:00  INFO 16024 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:59:27.254-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 9.134 seconds (process running for 10.248)
+2024-10-28T17:59:30.202-05:00  INFO 16024 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:59:30.208-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T17:59:30.214-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T17:59:30.232-05:00  INFO 16024 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T17:59:30.287-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 16024 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T17:59:30.287-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T17:59:30.592-05:00  INFO 16024 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T17:59:30.640-05:00  INFO 16024 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+2024-10-28T17:59:30.843-05:00  INFO 16024 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T17:59:30.845-05:00  INFO 16024 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T17:59:30.845-05:00  INFO 16024 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T17:59:30.940-05:00  INFO 16024 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T17:59:30.943-05:00  INFO 16024 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 651 ms
+2024-10-28T17:59:30.967-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T17:59:30.971-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T17:59:30.972-05:00  INFO 16024 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T17:59:30.972-05:00  INFO 16024 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T17:59:31.017-05:00  INFO 16024 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T17:59:31.035-05:00  INFO 16024 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T17:59:31.064-05:00  INFO 16024 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T17:59:31.070-05:00  WARN 16024 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T17:59:31.349-05:00  INFO 16024 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T17:59:31.365-05:00  INFO 16024 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:59:31.603-05:00  WARN 16024 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T17:59:31.784-05:00  WARN 16024 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T17:59:31.865-05:00  INFO 16024 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T17:59:31.870-05:00  INFO 16024 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.64 seconds (process running for 14.864)
+2024-10-28T17:59:34.283-05:00  INFO 16024 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T17:59:34.339-05:00  INFO 16024 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T17:59:35.350-05:00  WARN 16024 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T17:59:35.350-05:00  WARN 16024 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T17:59:36.157-05:00  INFO 16024 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T17:59:36.157-05:00  INFO 16024 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T17:59:36.160-05:00  INFO 16024 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-28T17:59:50.086-05:00  INFO 16024 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T17:59:50.087-05:00  INFO 16024 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T17:59:50.092-05:00  INFO 16024 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T18:00:17.661-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 27152 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:00:17.662-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:00:18.622-05:00  INFO 27152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:00:18.746-05:00  INFO 27152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:00:19.724-05:00  INFO 27152 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:00:19.745-05:00  INFO 27152 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:00:19.746-05:00  INFO 27152 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:00:19.891-05:00  INFO 27152 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:00:19.892-05:00  INFO 27152 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2209 ms
+2024-10-28T18:00:19.958-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:00:20.274-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:00:20.276-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:00:20.290-05:00  INFO 27152 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:00:20.635-05:00  INFO 27152 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:00:20.785-05:00  INFO 27152 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:00:20.876-05:00  INFO 27152 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:00:21.569-05:00  INFO 27152 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:00:21.632-05:00  WARN 27152 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:00:22.706-05:00  INFO 27152 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:00:22.782-05:00  INFO 27152 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:00:23.275-05:00  INFO 27152 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:00:24.524-05:00  WARN 27152 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:00:25.272-05:00  WARN 27152 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:00:25.977-05:00  INFO 27152 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:00:25.993-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 8.742 seconds (process running for 10.056)
+2024-10-28T18:00:28.536-05:00  INFO 27152 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:00:28.540-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:00:28.547-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:00:28.570-05:00  INFO 27152 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T18:00:28.626-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 27152 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:00:28.626-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:00:29.038-05:00  INFO 27152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:00:29.066-05:00  INFO 27152 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:00:29.178-05:00  INFO 27152 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:00:29.179-05:00  INFO 27152 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:00:29.180-05:00  INFO 27152 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:00:29.254-05:00  INFO 27152 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:00:29.254-05:00  INFO 27152 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 622 ms
+2024-10-28T18:00:29.273-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T18:00:29.276-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:00:29.277-05:00  INFO 27152 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T18:00:29.277-05:00  INFO 27152 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:00:29.323-05:00  INFO 27152 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:00:29.330-05:00  INFO 27152 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:00:29.352-05:00  INFO 27152 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:00:29.355-05:00  WARN 27152 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:00:29.605-05:00  INFO 27152 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:00:29.626-05:00  INFO 27152 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:00:29.861-05:00  WARN 27152 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:00:29.975-05:00  WARN 27152 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:00:30.057-05:00  INFO 27152 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:00:30.065-05:00  INFO 27152 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.495 seconds (process running for 14.128)
+2024-10-28T18:00:32.347-05:00  INFO 27152 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T18:00:32.406-05:00  INFO 27152 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T18:00:33.510-05:00  WARN 27152 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T18:00:33.511-05:00  WARN 27152 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T18:00:34.301-05:00  INFO 27152 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T18:00:34.301-05:00  INFO 27152 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T18:00:34.303-05:00  INFO 27152 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-28T18:00:37.365-05:00  INFO 27152 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:00:37.367-05:00  INFO 27152 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T18:00:37.367-05:00  INFO 27152 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T18:01:11.384-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 2288 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:01:11.386-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:01:12.279-05:00  INFO 2288 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:01:12.400-05:00  INFO 2288 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 96 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:01:13.303-05:00  INFO 2288 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:01:13.320-05:00  INFO 2288 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:01:13.320-05:00  INFO 2288 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:01:13.472-05:00  INFO 2288 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:01:13.473-05:00  INFO 2288 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2064 ms
+2024-10-28T18:01:13.531-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:01:13.842-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:01:13.844-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:01:13.859-05:00  INFO 2288 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:01:14.082-05:00  INFO 2288 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:01:14.181-05:00  INFO 2288 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:01:14.240-05:00  INFO 2288 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:01:14.800-05:00  INFO 2288 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:01:14.850-05:00  WARN 2288 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:01:15.822-05:00  INFO 2288 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:01:15.888-05:00  INFO 2288 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:01:16.327-05:00  INFO 2288 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:01:17.373-05:00  WARN 2288 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:01:18.090-05:00  WARN 2288 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:01:18.773-05:00  INFO 2288 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:01:18.786-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 7.793 seconds (process running for 8.763)
+2024-10-28T18:01:21.031-05:00  INFO 2288 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:01:21.034-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:01:21.039-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:01:21.053-05:00  INFO 2288 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T18:01:21.145-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 2288 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:01:21.146-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:01:21.615-05:00  INFO 2288 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:01:21.690-05:00  INFO 2288 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:01:21.844-05:00  INFO 2288 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:01:21.845-05:00  INFO 2288 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:01:21.845-05:00  INFO 2288 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:01:21.897-05:00  INFO 2288 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:01:21.898-05:00  INFO 2288 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 737 ms
+2024-10-28T18:01:21.918-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T18:01:21.921-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:01:21.921-05:00  INFO 2288 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T18:01:21.922-05:00  INFO 2288 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:01:21.979-05:00  INFO 2288 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:01:21.999-05:00  INFO 2288 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:01:22.066-05:00  INFO 2288 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:01:22.070-05:00  WARN 2288 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:01:22.367-05:00  INFO 2288 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:01:22.388-05:00  INFO 2288 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:01:22.799-05:00  WARN 2288 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:01:23.034-05:00  WARN 2288 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:01:23.195-05:00  INFO 2288 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:01:23.202-05:00  INFO 2288 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 2.15 seconds (process running for 13.179)
+2024-10-28T18:01:24.949-05:00  INFO 2288 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T18:01:25.014-05:00  INFO 2288 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T18:01:25.968-05:00  WARN 2288 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T18:01:25.968-05:00  WARN 2288 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T18:01:26.641-05:00  INFO 2288 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T18:01:26.641-05:00  INFO 2288 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T18:01:26.642-05:00  INFO 2288 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-28T18:01:30.898-05:00  INFO 2288 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:01:30.899-05:00  INFO 2288 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T18:01:30.900-05:00  INFO 2288 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T18:02:00.494-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 27020 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:02:00.495-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:02:01.384-05:00  INFO 27020 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:02:01.523-05:00  INFO 27020 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 119 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:02:02.226-05:00  INFO 27020 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:02:02.246-05:00  INFO 27020 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:02:02.246-05:00  INFO 27020 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:02:02.370-05:00  INFO 27020 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:02:02.371-05:00  INFO 27020 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1855 ms
+2024-10-28T18:02:02.421-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:02:02.719-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:02:02.723-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:02:02.738-05:00  INFO 27020 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:02:03.003-05:00  INFO 27020 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:02:03.153-05:00  INFO 27020 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:02:03.264-05:00  INFO 27020 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:02:03.840-05:00  INFO 27020 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:02:03.907-05:00  WARN 27020 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:02:05.015-05:00  INFO 27020 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:02:05.137-05:00  INFO 27020 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:02:05.750-05:00  INFO 27020 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:02:07.000-05:00  WARN 27020 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:02:07.878-05:00  WARN 27020 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:02:08.750-05:00  INFO 27020 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:02:08.766-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 8.688 seconds (process running for 9.717)
+2024-10-28T18:02:11.430-05:00  INFO 27020 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:02:11.434-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:02:11.443-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:02:11.459-05:00  INFO 27020 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T18:02:11.502-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 27020 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:02:11.503-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:02:11.769-05:00  INFO 27020 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:02:11.797-05:00  INFO 27020 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:02:11.878-05:00  INFO 27020 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:02:11.880-05:00  INFO 27020 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:02:11.882-05:00  INFO 27020 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:02:11.987-05:00  INFO 27020 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:02:11.987-05:00  INFO 27020 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 481 ms
+2024-10-28T18:02:12.014-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T18:02:12.018-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:02:12.018-05:00  INFO 27020 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T18:02:12.018-05:00  INFO 27020 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:02:12.053-05:00  INFO 27020 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:02:12.059-05:00  INFO 27020 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:02:12.088-05:00  INFO 27020 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:02:12.091-05:00  WARN 27020 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:02:12.256-05:00  INFO 27020 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:02:12.266-05:00  INFO 27020 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:02:12.460-05:00  WARN 27020 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:02:12.564-05:00  WARN 27020 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:02:12.611-05:00  INFO 27020 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:02:12.616-05:00  INFO 27020 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.158 seconds (process running for 13.567)
+2024-10-28T18:02:14.265-05:00  INFO 27020 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T18:02:14.334-05:00  INFO 27020 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T18:02:15.501-05:00  WARN 27020 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T18:02:15.501-05:00  WARN 27020 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T18:02:16.144-05:00  INFO 27020 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T18:02:16.144-05:00  INFO 27020 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T18:02:16.145-05:00  INFO 27020 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-28T18:02:19.578-05:00  INFO 27020 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:02:19.579-05:00  INFO 27020 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T18:02:19.580-05:00  INFO 27020 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T18:26:12.672-05:00  INFO 22932 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 22932 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:26:12.673-05:00  INFO 22932 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:26:13.515-05:00  INFO 22932 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:26:13.619-05:00  INFO 22932 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:26:14.478-05:00  INFO 22932 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:26:14.496-05:00  INFO 22932 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:26:14.496-05:00  INFO 22932 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:26:14.642-05:00  INFO 22932 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:26:14.642-05:00  INFO 22932 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1950 ms
+2024-10-28T18:26:14.698-05:00  INFO 22932 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:26:15.021-05:00  INFO 22932 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:26:15.024-05:00  INFO 22932 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:26:15.042-05:00  INFO 22932 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:26:15.334-05:00  INFO 22932 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:26:15.471-05:00  INFO 22932 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:26:15.606-05:00  INFO 22932 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:26:16.107-05:00  INFO 22932 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:26:16.150-05:00  WARN 22932 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:26:17.126-05:00  INFO 22932 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:26:17.194-05:00  INFO 22932 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:17.619-05:00  INFO 22932 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:26:18.718-05:00  WARN 22932 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:26:19.425-05:00  WARN 22932 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:26:19.885-05:00  WARN 22932 --- [demo] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-10-28T18:26:19.886-05:00  INFO 22932 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:19.890-05:00  INFO 22932 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:26:19.894-05:00  INFO 22932 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:26:19.915-05:00  INFO 22932 --- [demo] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-28T18:26:19.949-05:00 ERROR 22932 --- [demo] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-10-28T18:26:19.958-05:00  WARN 22932 --- [demo] [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.example.demo.frontend.UseCaseTest@5edf9eb1]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@17699e35 testClass = com.example.demo.frontend.UseCaseTest, locations = [], classes = [com.example.demo.DemoApplication], contextInitializerClasses = [], activeProfiles = ["test"], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@563f38c4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7ef82753, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@350aac89, org.springframework.boot.test.web.reactor.netty.DisableReactorResourceFactoryGlobalResourcesContextCustomizerFactory$DisableReactorResourceFactoryGlobalResourcesContextCustomizerCustomizer@606e4010, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@3e08ff24, org.springframework.boot.test.context.SpringBootTestAnnotation@225f5315], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:98) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:94) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:52) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:70) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:98) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:530) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:758) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:453) ~[.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:211) ~[.cp/:na]
+Caused by: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:469) ~[spring-context-6.1.11.jar:6.1.11]
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75) ~[na:na]
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:257) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:202) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:990) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.2.jar:3.3.2]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.3.2.jar:3.3.2]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.2.jar:3.3.2]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.3.2.jar:3.3.2]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.11.jar:6.1.11]
+	... 72 common frames omitted
+Caused by: org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+	at org.springframework.boot.web.server.PortInUseException.lambda$throwIfPortBindingException$0(PortInUseException.java:70) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.server.PortInUseException.lambda$ifPortBindingException$1(PortInUseException.java:85) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.server.PortInUseException.ifCausedBy(PortInUseException.java:103) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.server.PortInUseException.ifPortBindingException(PortInUseException.java:82) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.server.PortInUseException.throwIfPortBindingException(PortInUseException.java:69) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:250) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.servlet.context.WebServerStartStopLifecycle.start(WebServerStartStopLifecycle.java:44) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:285) ~[spring-context-6.1.11.jar:6.1.11]
+	... 91 common frames omitted
+Caused by: java.lang.IllegalArgumentException: standardService.connector.startFailed
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:222) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:310) ~[spring-boot-3.3.2.jar:3.3.2]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:236) ~[spring-boot-3.3.2.jar:3.3.2]
+	... 93 common frames omitted
+Caused by: org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1061) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:219) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	... 95 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:555) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:337) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:294) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:239) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:194) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1304) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1390) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:643) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1058) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	... 97 common frames omitted
+
+2024-10-28T18:26:26.597-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 22192 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:26:26.599-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:26:27.496-05:00  INFO 22192 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:26:27.607-05:00  INFO 22192 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:26:28.495-05:00  INFO 22192 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:26:28.509-05:00  INFO 22192 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:26:28.509-05:00  INFO 22192 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:26:28.638-05:00  INFO 22192 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:26:28.639-05:00  INFO 22192 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2018 ms
+2024-10-28T18:26:28.692-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:26:29.011-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:26:29.015-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:26:29.037-05:00  INFO 22192 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:26:29.299-05:00  INFO 22192 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:26:29.437-05:00  INFO 22192 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:26:29.515-05:00  INFO 22192 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:26:30.070-05:00  INFO 22192 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:26:30.117-05:00  WARN 22192 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:26:31.073-05:00  INFO 22192 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:26:31.140-05:00  INFO 22192 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:31.535-05:00  INFO 22192 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:26:32.654-05:00  WARN 22192 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:26:33.299-05:00  WARN 22192 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:26:33.945-05:00  INFO 22192 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:26:33.957-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 7.749 seconds (process running for 8.682)
+2024-10-28T18:26:36.069-05:00  INFO 22192 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:36.073-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:26:36.076-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:26:36.086-05:00  INFO 22192 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T18:26:36.130-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 22192 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:26:36.131-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:26:36.391-05:00  INFO 22192 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:26:36.468-05:00  INFO 22192 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:26:36.557-05:00  INFO 22192 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:26:36.558-05:00  INFO 22192 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:26:36.558-05:00  INFO 22192 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:26:36.618-05:00  INFO 22192 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:26:36.619-05:00  INFO 22192 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 485 ms
+2024-10-28T18:26:36.642-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T18:26:36.646-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:26:36.647-05:00  INFO 22192 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T18:26:36.648-05:00  INFO 22192 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:26:36.695-05:00  INFO 22192 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:26:36.705-05:00  INFO 22192 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:26:36.734-05:00  INFO 22192 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:26:36.739-05:00  WARN 22192 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:26:36.929-05:00  INFO 22192 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:26:36.940-05:00  INFO 22192 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:37.174-05:00  WARN 22192 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:26:37.303-05:00  WARN 22192 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:26:37.363-05:00  INFO 22192 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:26:37.369-05:00  INFO 22192 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.284 seconds (process running for 12.094)
+2024-10-28T18:26:38.521-05:00  INFO 22192 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T18:26:38.573-05:00  INFO 22192 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T18:26:39.454-05:00  WARN 22192 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T18:26:39.454-05:00  WARN 22192 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T18:26:40.196-05:00  INFO 22192 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T18:26:40.197-05:00  INFO 22192 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T18:26:40.199-05:00  INFO 22192 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-28T18:26:44.346-05:00  INFO 22192 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:26:44.348-05:00  INFO 22192 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T18:26:44.348-05:00  INFO 22192 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T18:31:08.841-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 17432 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:31:08.842-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:31:09.674-05:00  INFO 17432 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:31:09.770-05:00  INFO 17432 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:31:10.597-05:00  INFO 17432 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:31:10.619-05:00  INFO 17432 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:31:10.619-05:00  INFO 17432 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:31:10.760-05:00  INFO 17432 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:31:10.761-05:00  INFO 17432 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1897 ms
+2024-10-28T18:31:10.819-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T18:31:11.152-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:31:11.154-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T18:31:11.169-05:00  INFO 17432 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:31:11.491-05:00  INFO 17432 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:31:11.648-05:00  INFO 17432 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T18:31:11.733-05:00  INFO 17432 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:31:12.336-05:00  INFO 17432 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:31:12.382-05:00  WARN 17432 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:31:13.414-05:00  INFO 17432 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:31:13.486-05:00  INFO 17432 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:31:13.894-05:00  INFO 17432 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T18:31:15.190-05:00  WARN 17432 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:31:15.932-05:00  WARN 17432 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:31:16.721-05:00  INFO 17432 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:31:16.734-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 8.329 seconds (process running for 9.331)
+2024-10-28T18:31:19.169-05:00  INFO 17432 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:31:19.173-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T18:31:19.178-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T18:31:19.190-05:00  INFO 17432 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T18:31:19.230-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 17432 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T18:31:19.231-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T18:31:19.482-05:00  INFO 17432 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T18:31:19.522-05:00  INFO 17432 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 6 JPA repository interfaces.
+2024-10-28T18:31:19.612-05:00  INFO 17432 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T18:31:19.614-05:00  INFO 17432 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T18:31:19.614-05:00  INFO 17432 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T18:31:19.671-05:00  INFO 17432 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T18:31:19.671-05:00  INFO 17432 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 437 ms
+2024-10-28T18:31:19.687-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T18:31:19.689-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T18:31:19.689-05:00  INFO 17432 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T18:31:19.690-05:00  INFO 17432 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T18:31:19.713-05:00  INFO 17432 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T18:31:19.721-05:00  INFO 17432 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T18:31:19.746-05:00  INFO 17432 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T18:31:19.765-05:00  WARN 17432 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T18:31:19.919-05:00  INFO 17432 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T18:31:19.934-05:00  INFO 17432 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:31:20.119-05:00  WARN 17432 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T18:31:20.235-05:00  WARN 17432 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T18:31:20.285-05:00  INFO 17432 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T18:31:20.291-05:00  INFO 17432 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.1 seconds (process running for 12.888)
+2024-10-28T18:31:21.784-05:00  INFO 17432 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T18:31:21.838-05:00  INFO 17432 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T18:31:22.839-05:00  WARN 17432 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T18:31:22.840-05:00  WARN 17432 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T18:31:23.614-05:00  INFO 17432 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T18:31:23.614-05:00  INFO 17432 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T18:31:23.615-05:00  INFO 17432 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-28T18:31:27.722-05:00  INFO 17432 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T18:31:27.723-05:00  INFO 17432 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T18:31:27.724-05:00  INFO 17432 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T19:53:54.561-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 19668 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T19:53:54.564-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T19:53:55.461-05:00  INFO 19668 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T19:53:55.564-05:00  INFO 19668 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2024-10-28T19:53:56.460-05:00  INFO 19668 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T19:53:56.480-05:00  INFO 19668 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T19:53:56.480-05:00  INFO 19668 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T19:53:56.627-05:00  INFO 19668 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T19:53:56.628-05:00  INFO 19668 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2043 ms
+2024-10-28T19:53:56.684-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T19:53:57.025-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T19:53:57.029-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T19:53:57.046-05:00  INFO 19668 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T19:53:57.333-05:00  INFO 19668 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T19:53:57.474-05:00  INFO 19668 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T19:53:57.543-05:00  INFO 19668 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T19:53:58.082-05:00  INFO 19668 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T19:53:58.135-05:00  WARN 19668 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T19:53:59.099-05:00  INFO 19668 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T19:53:59.167-05:00  INFO 19668 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:53:59.596-05:00  INFO 19668 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T19:54:00.705-05:00  WARN 19668 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T19:54:01.347-05:00  WARN 19668 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T19:54:01.756-05:00  INFO 19668 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T19:54:01.769-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 7.57 seconds (process running for 8.517)
+2024-10-28T19:54:03.847-05:00  INFO 19668 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:54:03.849-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T19:54:03.852-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T19:54:03.862-05:00  INFO 19668 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T19:54:03.903-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 19668 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T19:54:03.904-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T19:54:04.122-05:00  INFO 19668 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T19:54:04.154-05:00  INFO 19668 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 6 JPA repository interfaces.
+2024-10-28T19:54:04.231-05:00  INFO 19668 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T19:54:04.233-05:00  INFO 19668 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T19:54:04.233-05:00  INFO 19668 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T19:54:04.292-05:00  INFO 19668 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T19:54:04.293-05:00  INFO 19668 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 386 ms
+2024-10-28T19:54:04.307-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T19:54:04.310-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T19:54:04.310-05:00  INFO 19668 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T19:54:04.311-05:00  INFO 19668 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T19:54:04.337-05:00  INFO 19668 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T19:54:04.343-05:00  INFO 19668 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T19:54:04.362-05:00  INFO 19668 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T19:54:04.366-05:00  WARN 19668 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T19:54:04.500-05:00  INFO 19668 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T19:54:04.509-05:00  INFO 19668 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:54:04.690-05:00  WARN 19668 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T19:54:04.787-05:00  WARN 19668 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T19:54:04.835-05:00  INFO 19668 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T19:54:04.839-05:00  INFO 19668 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 0.978 seconds (process running for 11.589)
+2024-10-28T19:54:06.655-05:00  INFO 19668 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T19:54:06.666-05:00  INFO 19668 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T19:54:07.659-05:00  WARN 19668 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T19:54:07.659-05:00  WARN 19668 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T19:54:08.264-05:00  INFO 19668 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T19:54:08.264-05:00  INFO 19668 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T19:54:08.265-05:00  INFO 19668 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-28T19:54:12.627-05:00  INFO 19668 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:54:12.628-05:00  INFO 19668 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T19:54:12.630-05:00  INFO 19668 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-28T19:54:53.950-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 25740 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T19:54:53.951-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T19:54:54.863-05:00  INFO 25740 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T19:54:54.984-05:00  INFO 25740 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 6 JPA repository interfaces.
+2024-10-28T19:54:55.972-05:00  INFO 25740 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T19:54:56.050-05:00  INFO 25740 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T19:54:56.052-05:00  INFO 25740 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T19:54:56.222-05:00  INFO 25740 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T19:54:56.223-05:00  INFO 25740 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2248 ms
+2024-10-28T19:54:56.276-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-28T19:54:56.584-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T19:54:56.587-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-28T19:54:56.600-05:00  INFO 25740 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T19:54:56.863-05:00  INFO 25740 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T19:54:56.990-05:00  INFO 25740 --- [demo] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-28T19:54:57.045-05:00  INFO 25740 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T19:54:57.590-05:00  INFO 25740 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T19:54:57.658-05:00  WARN 25740 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T19:54:58.911-05:00  INFO 25740 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T19:54:59.038-05:00  INFO 25740 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:54:59.569-05:00  INFO 25740 --- [demo] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-28T19:55:00.526-05:00  WARN 25740 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T19:55:01.128-05:00  WARN 25740 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T19:55:01.797-05:00  INFO 25740 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T19:55:01.810-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 8.242 seconds (process running for 9.184)
+2024-10-28T19:55:03.853-05:00  INFO 25740 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:55:03.858-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-28T19:55:03.862-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-28T19:55:03.872-05:00  INFO 25740 --- [demo] [main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+2024-10-28T19:55:03.913-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Starting UseCaseTest using Java 17.0.12 with PID 25740 (started by Janus in C:\Users\Janus\Documents\GitHub\PetLand\Proyecto\demo)
+2024-10-28T19:55:03.913-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : The following 1 profile is active: "test"
+2024-10-28T19:55:04.162-05:00  INFO 25740 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-28T19:55:04.202-05:00  INFO 25740 --- [demo] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 6 JPA repository interfaces.
+2024-10-28T19:55:04.281-05:00  INFO 25740 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-28T19:55:04.282-05:00  INFO 25740 --- [demo] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-28T19:55:04.282-05:00  INFO 25740 --- [demo] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-28T19:55:04.342-05:00  INFO 25740 --- [demo] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-28T19:55:04.342-05:00  INFO 25740 --- [demo] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 426 ms
+2024-10-28T19:55:04.378-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-28T19:55:04.381-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2024-10-28T19:55:04.382-05:00  INFO 25740 --- [demo] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-28T19:55:04.382-05:00  INFO 25740 --- [demo] [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2024-10-28T19:55:04.416-05:00  INFO 25740 --- [demo] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-28T19:55:04.422-05:00  INFO 25740 --- [demo] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-28T19:55:04.443-05:00  INFO 25740 --- [demo] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-28T19:55:04.446-05:00  WARN 25740 --- [demo] [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-28T19:55:04.588-05:00  INFO 25740 --- [demo] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-28T19:55:04.596-05:00  INFO 25740 --- [demo] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:55:04.754-05:00  WARN 25740 --- [demo] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-28T19:55:04.863-05:00  WARN 25740 --- [demo] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-10-28T19:55:04.930-05:00  INFO 25740 --- [demo] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-28T19:55:04.936-05:00  INFO 25740 --- [demo] [main] com.example.demo.frontend.UseCaseTest    : Started UseCaseTest in 1.065 seconds (process running for 12.31)
+2024-10-28T19:55:06.204-05:00  INFO 25740 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 130.0.6723.69 (resolved driver for Chrome 130)
+2024-10-28T19:55:06.267-05:00  INFO 25740 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\Janus\.cache\selenium\chromedriver\win64\130.0.6723.69\chromedriver.exe
+2024-10-28T19:55:07.265-05:00  WARN 25740 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find CDP implementation matching 130
+2024-10-28T19:55:07.266-05:00  WARN 25740 --- [demo] [main] o.o.selenium.chromium.ChromiumDriver     : Unable to find version of CDP to use for 130.0.6723.70. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.19.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+2024-10-28T19:55:07.894-05:00  INFO 25740 --- [demo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-28T19:55:07.894-05:00  INFO 25740 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-28T19:55:07.895-05:00  INFO 25740 --- [demo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-28T19:55:12.171-05:00  INFO 25740 --- [demo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-28T19:55:12.171-05:00  INFO 25740 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-28T19:55:12.173-05:00  INFO 25740 --- [demo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
