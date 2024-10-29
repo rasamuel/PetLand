@@ -128,7 +128,7 @@ public class UseCase1Test {
         WebElement btnMascota = driver.findElement(By.id("btnMascota"));
         btnMascota.click();
 
-        wait.until(ExpectedConditions.urlToBe(BASE_URL + "/pets")); // Cambia a la URL del dashboard
+        wait.until(ExpectedConditions.urlToBe(BASE_URL + "/pets")); // Cambia a la URL de las mascotas
         Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/pets");
         
         // 7. Registrar una mascota asociada al dueño
@@ -195,6 +195,6 @@ public class UseCase1Test {
 
     @AfterEach
     void tearDown() {
-        //driver.quit(); // Cierra el navegador después de cada prueba  
+        driver.quit(); // Cierra el navegador después de cada prueba  
     }
 }
