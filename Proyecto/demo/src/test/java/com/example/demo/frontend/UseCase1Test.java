@@ -17,6 +17,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.openqa.selenium.support.ui.Select;
+import java.lang.Thread;
+
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -37,14 +39,15 @@ public class UseCase1Test {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-extensions");
-        // chromeOptions.addArguments("--headless"); // Descomentar si se desea ejecutar en modo headless
 
         this.driver = new ChromeDriver(chromeOptions);
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Maximizar la ventana del navegador
+        driver.manage().window().maximize();
     }
 
     @Test
-    public void casoUso1() {
+    public void casoUso1() throws InterruptedException {
         // 1. El veterinario intenta ingresar con credenciales incorrectas
         driver.get(BASE_URL + "/login/vet");
         WebElement inputCorreo = driver.findElement(By.id("correo"));
@@ -78,13 +81,11 @@ public class UseCase1Test {
         // 4. Ir a la sección de registro de clientes
         WebElement btnRegistroClientes = driver.findElement(By.id("btnRegistroClientes"));
         btnRegistroClientes.click();
-
         // 5. Registrar un nuevo cliente
         WebElement inputNombre = driver.findElement(By.id("nombre"));
         WebElement inputCedula = driver.findElement(By.id("cedula"));
         WebElement inputCorreoOwner = driver.findElement(By.id("correo"));
         WebElement inputTelefono = driver.findElement(By.id("celular"));
-        WebElement btnRegistrarCliente = driver.findElement(By.id("btnRegistrarCliente"));
 
         // Rellenar el formulario del dueño con datos erroneos
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
@@ -92,6 +93,17 @@ public class UseCase1Test {
         inputCedula.sendKeys("123456789");
         inputCorreoOwner.sendKeys("dbzgmail.com");
         inputTelefono.sendKeys("(3390) 458-3742");
+
+        // Primero, realiza un scroll hacia abajo en la página
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement btnRegistrarCliente = driver.findElement(By.id("btnRegistrarCliente"));
+        
+        // Forzar el desplazamiento hasta que el botón sea visible en la pantalla
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 1000);");
+        Thread.sleep(100);
+
+        // Esperar que el botón esté listo para hacer clic y ejecutar el clic
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnRegistrarCliente")));
         btnRegistrarCliente.click();
 
         inputNombre.clear();
@@ -111,6 +123,8 @@ public class UseCase1Test {
         Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/owners");
 
         // 6. Ir a la sección de mascotas
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -2000);");
+        Thread.sleep(100);
         WebElement btnMascota = driver.findElement(By.id("btnMascota"));
         btnMascota.click();
 
@@ -118,6 +132,7 @@ public class UseCase1Test {
         Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/pets");
         
         // 7. Registrar una mascota asociada al dueño
+        
         WebElement btnRegistrarMascota = driver.findElement(By.id("btnRegistrarMascota"));
         btnRegistrarMascota.click();
 
@@ -151,13 +166,14 @@ public class UseCase1Test {
          
         // Opción 2: Desplazarse al botón
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnAgregarMascota);
-        
-        // Opción 3: Hacer clic usando JavaScript (si el clic regular no funciona)
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", btnAgregarMascota);
+        Thread.sleep(300);
+        btnAgregarMascota.click();
         
         wait.until(ExpectedConditions.urlToBe(BASE_URL + "/pets")); // Cambia a la URL de lista de mascotas
         Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/pets");
 
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -2000);");
+        Thread.sleep(100);
         // 9. Ir a al login de los propietarios
         WebElement btnLoginOwner = driver.findElement(By.id("btnLoginOwner"));
         btnLoginOwner.click();
@@ -172,6 +188,9 @@ public class UseCase1Test {
         // Rellenar el formulario de inicio de sesión
         inputCedulaOwner.sendKeys("123456789");
         btnIniciarSesion.click();
+        
+        wait.until(ExpectedConditions.urlToBe(BASE_URL + "/owner-pets-list/56")); // Cambia a la URL del dashboard
+        Assertions.assertThat(driver.getCurrentUrl()).isEqualTo(BASE_URL + "/owner-pets-list/56");
     }
 
     @AfterEach
