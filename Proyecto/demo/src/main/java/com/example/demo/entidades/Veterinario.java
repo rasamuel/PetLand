@@ -1,10 +1,19 @@
 package com.example.demo.entidades;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Veterinario {
 
     @Id
@@ -16,69 +25,4 @@ public class Veterinario {
     private String foto;
     private String nombre;
     private boolean estado;
-
-    public Veterinario(String nombre, String correo,String contrasena, String especialidad, String foto, boolean estado) {
-        this.contrasena = contrasena;
-        this.correo = correo;
-        this.especialidad = especialidad;
-        this.foto = foto;
-        this.nombre = nombre;
-        this.estado = estado;
-    }
-    public Veterinario() {
-    }
-
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getCorreo(){
-        return correo;
-    }
-    public void setCorreo(String correo){
-        this.correo = correo;
-    }
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public boolean getEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
 }

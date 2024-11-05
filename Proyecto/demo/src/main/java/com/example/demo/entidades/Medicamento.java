@@ -4,8 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Entity
+@Data // Genera automáticamente getters, setters, toString, equals y hashCode
+@Builder // Habilita el patrón Builder
+@NoArgsConstructor // Genera un constructor sin argumentos
+@AllArgsConstructor // Genera un constructor con todos los argumentos
 public class Medicamento {
 
     @Id
@@ -16,66 +24,4 @@ public class Medicamento {
     private float precioVenta;
     private int unidadesDisponibles;
     private int unidadesVendidas;
-
-    public Medicamento(String string, float f, float g, int i, int j) {
-        nombre = string;
-        precioCompra = f;
-        precioVenta = g;
-        unidadesDisponibles = i;
-        unidadesVendidas = j;
-    }
-    public Medicamento(){
-        
-    }
-    public Medicamento(String nombre) {
-        this.nombre = nombre;
-    }
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public float getPrecioCompra() {
-        return precioCompra;
-    }
-
-    public void setPrecioCompra(float precioCompra) {
-        this.precioCompra = precioCompra;
-    }
-
-    public float getPrecioVenta() {
-        return precioVenta;
-    }
-
-    public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
-    }
-
-    public int getUnidadesDisponibles() {
-        return unidadesDisponibles;
-    }
-
-    public void setUnidadesDisponibles(int unidadesDisponibles) {
-        this.unidadesDisponibles = unidadesDisponibles;
-    }
-
-    public int getUnidadesVendidas() {
-        return unidadesVendidas;
-    }
-
-    public void setUnidadesVendidas(int unidadesVendidas) {
-        this.unidadesVendidas = unidadesVendidas;
-    }
 }

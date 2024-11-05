@@ -6,20 +6,25 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import java.util.Date;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.Date;
+
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Tratamiento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Date fecha;
-    
+    private Date fecha = new Date();
     private int cantidad;
 
     @ManyToOne
@@ -28,74 +33,12 @@ public class Tratamiento {
     private Medicamento medicamento;
 
     @ManyToOne
-    @OnDelete(action = OnDeleteAction.SET_NULL) 
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "mascota_id", nullable = true)
     private Pet mascota;
 
     @ManyToOne
-    @OnDelete(action = OnDeleteAction.SET_NULL) 
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "veterinario_id", nullable = true)
     private Veterinario veterinario;
-
-    public Tratamiento(Long id, Date fecha, int cantidad, Medicamento medicamento, Pet mascota, Veterinario veterinario) {
-        this.id = id;
-        this.fecha = fecha;
-        this.cantidad = cantidad;
-        this.medicamento = medicamento;
-        this.mascota = mascota;
-        this.veterinario = veterinario;
-    }
-
-    public Tratamiento(){
-        this.fecha = new Date();
-    }
-    
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public Medicamento getMedicamento() {
-        return medicamento;
-    }
-
-    public void setMedicamento(Medicamento medicamento) {
-        this.medicamento = medicamento;
-    }
-
-    public Pet getMascota() {
-        return mascota;
-    }
-
-    public void setMascota(Pet mascota) {
-        this.mascota = mascota;
-    }
-
-    public Veterinario getVeterinario() {
-        return veterinario;
-    }
-
-    public void setVeterinario(Veterinario veterinario) {
-        this.veterinario = veterinario;
-    }
 }

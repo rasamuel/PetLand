@@ -4,12 +4,15 @@ import com.example.demo.entidades.Administrador;
 import com.example.demo.entidades.Medicamento;
 import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Pet;
+import com.example.demo.entidades.Role;
 import com.example.demo.entidades.Tratamiento;
 import com.example.demo.entidades.Veterinario;
 import com.example.demo.repositorio.MedicamentoRepository;
 import com.example.demo.repositorio.OwnerRepository;
 import com.example.demo.repositorio.PetRepository;
+import com.example.demo.repositorio.RoleRepository;
 import com.example.demo.repositorio.TratamientoRepository;
+import com.example.demo.repositorio.UserRepository;
 import com.example.demo.repositorio.VeterinarioRepository;
 import com.example.demo.repositorio.AdministradorRepository;
 import com.github.javafaker.Faker;
@@ -27,6 +30,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -53,6 +57,12 @@ public class DataInitializer {
     
     @Autowired
     private AdministradorRepository administradorRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     // Lista de enfermedades comunes en perros
     private static final List<String> enfermedadesComunes = Arrays.asList(
@@ -236,6 +246,11 @@ public class DataInitializer {
 
     @Bean
     public CommandLineRunner loadData() {   
+        Role clienteRole = roleRepository.findByName("CLIENTE").orElse(new Role("CLIENTE"));
+        Role veterinarioRole = roleRepository.findByName("VETERINARIO").orElse(new Role("VETERINARIO"));
+        Role administradorRole = roleRepository.findByName("ADMINISTRADOR").orElse(new Role("ADMINISTRADOR"));
+        roleRepository.saveAll(Set.of(clienteRole, veterinarioRole, administradorRole));
+        
         return (args) -> {
             Faker faker = new Faker();
             Random random = new Random();
@@ -279,11 +294,11 @@ public class DataInitializer {
                     petRepository.save(pet);
                 }
             }
-            Owner owner1 = new Owner( "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908");
-            Owner owner2 = new Owner("Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852");
-            Owner owner3 = new Owner( "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791");
-            Owner owner4 = new Owner("Ana", "5556789", "ana.morales@example.com", "(616) 795-2420");
-            Owner owner5 = new Owner("Elena", "5553456", "elena.garcia@example.com", "(520) 840-5545");
+            Owner owner1 = new Owner( null, "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908", null);
+            Owner owner2 = new Owner(null, "Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852", null);
+            Owner owner3 = new Owner( null, "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791", null);
+            Owner owner4 = new Owner(null, "Ana", "5556789", "ana.morales@example.com", "(616) 795-2420", null);
+            Owner owner5 = new Owner(null, "Elena", "5553456", "elena.garcia@example.com", "(520) 840-5545", null);
             ownerRepository.save(owner1);
             ownerRepository.save(owner2);
             ownerRepository.save(owner3);
@@ -302,37 +317,220 @@ public class DataInitializer {
             petRepository.save(pet4);
             petRepository.save(pet5);
             List<Veterinario> veterinarios = List.of(
-
-                new Veterinario("Ana Gómez", "correo@gmail.com","12345", "Dermatología", "https://b2472105.smushcdn.com/2472105/wp-content/uploads/2023/09/Poses-Perfil-Profesional-Mujeres-ago.-10-2023-1-819x1024.jpg?lossy=1&strip=1&webp=1", true),
-                new Veterinario("Luis Martínez", "correo2@gmail.com","12345", "Oftalmología", "url/to/foto3.jpg",true),
-                new Veterinario("Carla Rodríguez", "correo3@gmail.com","12345", "Ortopedia", "url/to/foto4.jpg",true),
-                new Veterinario("Miguel Sánchez", "correo4@gmail.com","12345", "Cardiología", "url/to/foto5.jpg",true),
-                new Veterinario("Laura Fernández", "correo5@gmail.com","12345", "Oncología", "url/to/foto6.jpg", true),
-                new Veterinario("Pablo Hernández", "correo6@gmail.com","12345", "Neurología", "url/to/foto7.jpg",true),
-                new Veterinario("Silvia López", "correo7@gmail.com","12345", "Odontología", "url/to/foto8.jpg",true),
-                new Veterinario("Eduardo Torres", "correo8@gmail.com","12345", "Anestesiología", "url/to/foto9.jpg",true),
-                new Veterinario("Gabriela Ramírez", "correo9@gmail.com","12345", "Medicina General", "url/to/foto10.jpg",true),
-                new Veterinario("Ricardo Méndez", "correo10@gmail.com","12345", "Cirugía", "url/to/foto11.jpg",true),
-                new Veterinario("Sofía Morales", "correo11@gmail.com","12345", "Dermatología", "url/to/foto12.jpg",true),
-                new Veterinario("Fernando Ortiz", "correo12@gmail.com","12345", "Oftalmología", "url/to/foto13.jpg",true),
-                new Veterinario("Mariana Castro", "correo13@gmail.com","12345", "Ortopedia", "url/to/foto14.jpg",true),
-                new Veterinario("Sergio Aguirre", "correo14@gmail.com","12345", "Cardiología", "url/to/foto15.jpg", true),
-                new Veterinario("Patricia Vega", "correo15@gmail.com","12345", "Oncología", "url/to/foto16.jpg", true),
-                new Veterinario("Álvaro Navarro", "correo16@gmail.com","12345", "Neurología", "url/to/foto17.jpg", true),
-                new Veterinario("Camila Jiménez", "correo17@gmail.com","12345", "Odontología", "url/to/foto18.jpg", true),
-                new Veterinario("Andrés Castro", "correo18@gmail.com","12345", "Anestesiología", "url/to/foto19.jpg", true),
-                new Veterinario("Paula Rivas", "correo19@gmail.com","12345", "Medicina General", "url/to/foto20.jpg", true)
+                Veterinario.builder()
+                    .nombre("Ana Gómez")
+                    .correo("correo@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Dermatología")
+                    .foto("https://b2472105.smushcdn.com/2472105/wp-content/uploads/2023/09/Poses-Perfil-Profesional-Mujeres-ago.-10-2023-1-819x1024.jpg?lossy=1&strip=1&webp=1")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Luis Martínez")
+                    .correo("correo2@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Oftalmología")
+                    .foto("url/to/foto3.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Carla Rodríguez")
+                    .correo("correo3@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Ortopedia")
+                    .foto("url/to/foto4.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Miguel Sánchez")
+                    .correo("correo4@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Cardiología")
+                    .foto("url/to/foto5.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Laura Fernández")
+                    .correo("correo5@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Oncología")
+                    .foto("url/to/foto6.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Pablo Hernández")
+                    .correo("correo6@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Neurología")
+                    .foto("url/to/foto7.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Silvia López")
+                    .correo("correo7@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Odontología")
+                    .foto("url/to/foto8.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Eduardo Torres")
+                    .correo("correo8@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Anestesiología")
+                    .foto("url/to/foto9.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Gabriela Ramírez")
+                    .correo("correo9@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Medicina General")
+                    .foto("url/to/foto10.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Ricardo Méndez")
+                    .correo("correo10@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Cirugía")
+                    .foto("url/to/foto11.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Sofía Morales")
+                    .correo("correo11@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Dermatología")
+                    .foto("url/to/foto12.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Fernando Ortiz")
+                    .correo("correo12@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Oftalmología")
+                    .foto("url/to/foto13.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Mariana Castro")
+                    .correo("correo13@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Ortopedia")
+                    .foto("url/to/foto14.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Sergio Aguirre")
+                    .correo("correo14@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Cardiología")
+                    .foto("url/to/foto15.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Patricia Vega")
+                    .correo("correo15@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Oncología")
+                    .foto("url/to/foto16.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Álvaro Navarro")
+                    .correo("correo16@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Neurología")
+                    .foto("url/to/foto17.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Camila Jiménez")
+                    .correo("correo17@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Odontología")
+                    .foto("url/to/foto18.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Andrés Castro")
+                    .correo("correo18@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Anestesiología")
+                    .foto("url/to/foto19.jpg")
+                    .estado(true)
+                    .build(),
+            
+                Veterinario.builder()
+                    .nombre("Paula Rivas")
+                    .correo("correo19@gmail.com")
+                    .contrasena("12345")
+                    .especialidad("Medicina General")
+                    .foto("url/to/foto20.jpg")
+                    .estado(true)
+                    .build()
             );
+            
         
         veterinarios.forEach(veterinarioRepository::save);
 
 
         
         // Crear veterinarios de ejemplo
-        Veterinario vet1 = new Veterinario("Juan Pérez", "correo20@gmail.com","12345", "Cirugía", "url/to/foto1.jpg", true);
-        Veterinario vet2 = new Veterinario("María López", "correo21@gmail.com","54321", "Dermatología", "url/to/foto2.jpg", true);
-        Veterinario vet3 = new Veterinario("Roberto Díaz", "correo22@gmail.com","56789", "Oncología", "url/to/foto3.jpg", true);
-        Veterinario vet4 = new Veterinario("Laura García", "correo23@gmail.com","67890", "Oftalmología", "url/to/foto4.jpg", true);
+        Veterinario vet1 = Veterinario.builder()
+        .nombre("Juan Pérez")
+        .correo("correo20@gmail.com")
+        .contrasena("12345")
+        .especialidad("Cirugía")
+        .foto("url/to/foto1.jpg")
+        .estado(true)
+        .build();
+    
+    Veterinario vet2 = Veterinario.builder()
+        .nombre("María López")
+        .correo("correo21@gmail.com")
+        .contrasena("54321")
+        .especialidad("Dermatología")
+        .foto("url/to/foto2.jpg")
+        .estado(true)
+        .build();
+    
+    Veterinario vet3 = Veterinario.builder()
+        .nombre("Roberto Díaz")
+        .correo("correo22@gmail.com")
+        .contrasena("56789")
+        .especialidad("Oncología")
+        .foto("url/to/foto3.jpg")
+        .estado(true)
+        .build();
+    
+    Veterinario vet4 = Veterinario.builder()
+        .nombre("Laura García")
+        .correo("correo23@gmail.com")
+        .contrasena("67890")
+        .especialidad("Oftalmología")
+        .foto("url/to/foto4.jpg")
+        .estado(true)
+        .build();
+    
         veterinarioRepository.save(vet1);
         veterinarioRepository.save(vet2);
         veterinarioRepository.save(vet3);
@@ -387,36 +585,42 @@ public class DataInitializer {
 
     }
 
-        private void loadMedicamentosFromExcel(String fileName) {
+    private void loadMedicamentosFromExcel(String fileName) {
         try {
-            // Load the Excel file from the classpath
+            // Cargar el archivo Excel desde el classpath
             ClassPathResource resource = new ClassPathResource(fileName);
             InputStream inputStream = resource.getInputStream();
-
+    
             try (Workbook workbook = new XSSFWorkbook(inputStream)) {
-                Sheet sheet = workbook.getSheetAt(0); // Assume medications are on the first sheet
+                Sheet sheet = workbook.getSheetAt(0); // Asumimos que los medicamentos están en la primera hoja
                 for (Row row : sheet) {
                     if (row.getRowNum() == 0 || row.getCell(0) == null) {
-                        // Skip the header row or empty rows
+                        // Saltar la fila de encabezado o filas vacías
                         continue;
                     }
-
-                    // Read the row data
+    
+                    // Leer los datos de la fila
                     String nombre = row.getCell(0).getStringCellValue();
                     float precioVenta = (float) row.getCell(1).getNumericCellValue();
                     float precioCompra = (float) row.getCell(2).getNumericCellValue();
                     int unidadesDisponibles = (int) row.getCell(3).getNumericCellValue();
                     int unidadesVendidas = (int) row.getCell(4).getNumericCellValue();
-
-                    // Create a new Medicamento object
-                    Medicamento medicamento = new Medicamento(nombre, precioCompra, precioVenta, unidadesDisponibles, unidadesVendidas);
-
-                    // Save it to the repository
+    
+                    // Crear un nuevo objeto Medicamento usando el patrón Builder
+                    Medicamento medicamento = Medicamento.builder()
+                        .nombre(nombre)
+                        .precioCompra(precioCompra)
+                        .precioVenta(precioVenta)
+                        .unidadesDisponibles(unidadesDisponibles)
+                        .unidadesVendidas(unidadesVendidas)
+                        .build();
+    
+                    // Guardarlo en el repositorio
                     medicamentoRepository.save(medicamento);
                 }
-
+    
                 System.out.println("Medicamentos initialized successfully from Excel!");
-
+    
             } catch (IOException e) {
                 System.err.println("Error reading Excel file: " + e.getMessage());
                 e.printStackTrace();
@@ -427,5 +631,7 @@ public class DataInitializer {
         }
     }
     
+
+
 }
 

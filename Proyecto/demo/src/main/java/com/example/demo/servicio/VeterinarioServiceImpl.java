@@ -48,7 +48,7 @@ public class VeterinarioServiceImpl implements VeterinarioService {
             veterinario.setContrasena(veterinarioDetails.getContrasena());
             veterinario.setEspecialidad(veterinarioDetails.getEspecialidad());
             veterinario.setFoto(veterinarioDetails.getFoto());
-            veterinario.setEstado(veterinarioDetails.getEstado());
+            veterinario.setEstado(veterinarioDetails.isEstado());
             return veterinarioRepository.save(veterinario);
         });
     }

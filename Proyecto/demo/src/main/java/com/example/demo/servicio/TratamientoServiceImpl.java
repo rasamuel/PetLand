@@ -87,7 +87,7 @@ public List<Tratamiento> contarTratamientosPorMedicamentoUltimoMes() {
     List<Tratamiento> tratamientosResumen = new ArrayList<>();
     for (Map.Entry<String, Integer> entry : resumen.entrySet()) {
         Tratamiento tratamiento = new Tratamiento();
-        tratamiento.setMedicamento(new Medicamento(entry.getKey())); // Suponiendo que tienes un constructor en Medicamento
+        tratamiento.setMedicamento(new Medicamento(null, entry.getKey(), 0, 0, 0, 0)); 
         tratamiento.setCantidad(entry.getValue());
         tratamientosResumen.add(tratamiento);
     }

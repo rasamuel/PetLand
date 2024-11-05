@@ -89,7 +89,7 @@ public class PetController {
             existingPet.setEdad(pet.getEdad());
             existingPet.setPeso(pet.getPeso());
             existingPet.setEnfermedad(pet.getEnfermedad());
-            existingPet.setEstado(pet.getEstado());
+            existingPet.setEstado(pet.isEstado());
 
             return petService.savePet(existingPet); // Devuelve la mascota actualizada en JSON
         } else {
