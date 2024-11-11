@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entidades.Medicamento;
+import com.example.demo.dto.MedicamentoDTO;
 import com.example.demo.entidades.Tratamiento;
 import com.example.demo.servicio.MedicamentoService;
 import com.example.demo.servicio.TratamientoService;
 import com.example.demo.servicio.VeterinarioService;
-import com.example.demo.servicio.PetService; 
+import com.example.demo.servicio.PetService;
 
 import java.util.List;
 
@@ -25,17 +25,17 @@ public class DashboardController {
     private TratamientoService tratamientoService;
 
     @Autowired
-    private PetService petService; 
+    private PetService petService;
 
     @Autowired
-    private MedicamentoService medicamentoService; 
+    private MedicamentoService medicamentoService;
 
     // Obtiene la cantidad total de tratamientos administrados en el último mes
     @GetMapping("/total-tratamientos-ultimo-mes")
     public Long getTotalTratamientosUltimoMes() {
         return tratamientoService.contarTotalTratamientosUltimoMes();
     }
-    
+
     // Obtiene la lista de tratamientos administrados por medicamento en el último mes
     @GetMapping("/tratamientos-por-medicamento")
     public List<Tratamiento> getTratamientosPorMedicamentoUltimoMes() {
@@ -80,7 +80,7 @@ public class DashboardController {
 
     // Obtiene el top de medicamentos con más unidades vendidas
     @GetMapping("/top-medicamentos")
-    public List<Medicamento> getTopMedicamentos() {
+    public List<MedicamentoDTO> getTopMedicamentos() {
         return medicamentoService.obtenerTopMedicamentos();
     }
 }

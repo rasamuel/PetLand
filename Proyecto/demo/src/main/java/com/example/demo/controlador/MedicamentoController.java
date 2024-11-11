@@ -1,5 +1,6 @@
 package com.example.demo.controlador;
 
+import com.example.demo.dto.MedicamentoDTO;
 import com.example.demo.entidades.Medicamento;
 import com.example.demo.servicio.MedicamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,28 +20,28 @@ public class MedicamentoController {
 
     // Obtener todos los medicamentos
     @GetMapping
-    public List<Medicamento> getAllMedicamentos() {
+    public List<MedicamentoDTO> getAllMedicamentos() {
         return medicamentoService.getAllMedicamentos();
     }
 
     // Obtener un medicamento por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Medicamento> getMedicamentoById(@PathVariable Long id) {
-        Optional<Medicamento> medicamento = medicamentoService.getMedicamentoById(id);
+    public ResponseEntity<MedicamentoDTO> getMedicamentoById(@PathVariable Long id) {
+        Optional<MedicamentoDTO> medicamento = medicamentoService.getMedicamentoById(id);
         return medicamento.map(ResponseEntity::ok)
                           .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // Crear un nuevo medicamento
     @PostMapping
-    public Medicamento createMedicamento(@RequestBody Medicamento medicamento) {
+    public MedicamentoDTO createMedicamento(@RequestBody Medicamento medicamento) {
         return medicamentoService.createMedicamento(medicamento);
     }
 
     // Actualizar un medicamento existente
     @PutMapping("/{id}")
-    public ResponseEntity<Medicamento> updateMedicamento(@PathVariable Long id, @RequestBody Medicamento medicamentoDetails) {
-        Optional<Medicamento> updatedMedicamento = medicamentoService.updateMedicamento(id, medicamentoDetails);
+    public ResponseEntity<MedicamentoDTO> updateMedicamento(@PathVariable Long id, @RequestBody Medicamento medicamentoDetails) {
+        Optional<MedicamentoDTO> updatedMedicamento = medicamentoService.updateMedicamento(id, medicamentoDetails);
         return updatedMedicamento.map(ResponseEntity::ok)
                                  .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -58,7 +59,7 @@ public class MedicamentoController {
 
     // Buscar medicamentos por nombre (opcional)
     @GetMapping("/buscar")
-    public List<Medicamento> searchMedicamentos(@RequestParam String query) {
+    public List<MedicamentoDTO> searchMedicamentos(@RequestParam String query) {
         return medicamentoService.searchMedicamentos(query);
     }
 }

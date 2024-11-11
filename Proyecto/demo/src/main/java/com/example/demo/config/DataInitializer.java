@@ -6,6 +6,7 @@ import com.example.demo.entidades.Owner;
 import com.example.demo.entidades.Pet;
 import com.example.demo.entidades.Role;
 import com.example.demo.entidades.Tratamiento;
+import com.example.demo.entidades.UserEntity;
 import com.example.demo.entidades.Veterinario;
 import com.example.demo.repositorio.MedicamentoRepository;
 import com.example.demo.repositorio.OwnerRepository;
@@ -246,10 +247,21 @@ public class DataInitializer {
 
     @Bean
     public CommandLineRunner loadData() {   
-        Role clienteRole = roleRepository.findByName("CLIENTE").orElse(new Role("CLIENTE"));
-        Role veterinarioRole = roleRepository.findByName("VETERINARIO").orElse(new Role("VETERINARIO"));
-        Role administradorRole = roleRepository.findByName("ADMINISTRADOR").orElse(new Role("ADMINISTRADOR"));
-        roleRepository.saveAll(Set.of(clienteRole, veterinarioRole, administradorRole));
+        Role clienteRole = roleRepository.findByName("CLIENTE").orElseGet(() -> {
+            Role newRole = new Role("CLIENTE");
+            return roleRepository.save(newRole); // Guarda el rol si no existe
+        });
+        
+        Role veterinarioRole = roleRepository.findByName("VETERINARIO").orElseGet(() -> {
+            Role newRole = new Role("VETERINARIO");
+            return roleRepository.save(newRole);
+        });
+        
+        Role administradorRole = roleRepository.findByName("ADMINISTRADOR").orElseGet(() -> {
+            Role newRole = new Role("ADMINISTRADOR");
+            return roleRepository.save(newRole);
+        });
+        
         
         return (args) -> {
             Faker faker = new Faker();
@@ -259,41 +271,47 @@ public class DataInitializer {
             for (int i = 1; i <= 50; i++) {
                 Owner owner = new Owner();
                 owner.setNombre(faker.name().fullName());
+                
                 String cedulaSinGuiones = faker.idNumber().valid().replace("-", "");
                 owner.setCedula(cedulaSinGuiones);
+                
                 owner.setCorreo(faker.internet().emailAddress());
+                
                 String telefonoFormateado = faker.numerify("(###) ###-####");
                 owner.setCelular(telefonoFormateado);
+                
+                // Guarda el Owner en la base de datos
                 ownerRepository.save(owner);
                 
-
+                // Crea un UserEntity asociado al Owner y asigna el rol CLIENTE
+                createUserForOwner(owner, clienteRole);
+            
                 // Crear 2 mascotas por propietario
                 for (int j = 1; j <= 2; j++) {
                     Pet pet = new Pet();
                     pet.setNombre(faker.dog().name());
-
+                    
                     String breed = razas.get(random.nextInt(razas.size()));
                     pet.setRaza(breed);
-
-                    // Obtener URL de imagen de la raza específica
+            
                     String imageUrl = dogImageUrls.get(random.nextInt(dogImageUrls.size()));
                     pet.setImageUrl(imageUrl);
-
+                    
                     pet.setEdad(faker.number().numberBetween(1, 15));
-                    pet.setPeso(faker.number().randomDouble(2, 5, 40)); // Peso entre 5 y 40 kg
-
-                    // Generar estado usando Faker
-                    boolean estado = true;
-                    pet.setEstado(estado);
-
-                    // Seleccionar aleatoriamente una enfermedad común en perros
+                    pet.setPeso(faker.number().randomDouble(2, 5, 40));
+                    
+                    pet.setEstado(true);  // O podrías usar faker.bool().bool() si deseas aleatoriedad
+                    
                     String enfermedad = enfermedadesComunes.get(random.nextInt(enfermedadesComunes.size()));
                     pet.setEnfermedad(enfermedad);
-
+                    
                     pet.setOwner(owner);
+                    
+                    // Guarda la mascota en la base de datos
                     petRepository.save(pet);
                 }
             }
+            
             Owner owner1 = new Owner( null, "Carlos", "1027801475", "carlos.gomez@example.com", "(363) 441-3908", null);
             Owner owner2 = new Owner(null, "Maria", "5551234", "maria.lopez@example.com", "(415) 533-0852", null);
             Owner owner3 = new Owner( null, "Luis", "5552345", "luis.ramirez@example.com", "(192) 029-2791", null);
@@ -490,7 +508,13 @@ public class DataInitializer {
             );
             
         
-        veterinarios.forEach(veterinarioRepository::save);
+            veterinarios.forEach(veterinario -> {
+                // Guarda el veterinario en el repositorio
+                veterinarioRepository.save(veterinario);
+            
+                // Crea el UserEntity asociado y asigna el rol "VETERINARIO"
+                createUserForVeterinario(veterinario, veterinarioRole);
+            });
 
 
         
@@ -503,7 +527,9 @@ public class DataInitializer {
         .foto("url/to/foto1.jpg")
         .estado(true)
         .build();
-    
+            
+        createUserForVeterinario(vet1, veterinarioRole);
+
     Veterinario vet2 = Veterinario.builder()
         .nombre("María López")
         .correo("correo21@gmail.com")
@@ -512,7 +538,7 @@ public class DataInitializer {
         .foto("url/to/foto2.jpg")
         .estado(true)
         .build();
-    
+        createUserForVeterinario(vet2, veterinarioRole);
     Veterinario vet3 = Veterinario.builder()
         .nombre("Roberto Díaz")
         .correo("correo22@gmail.com")
@@ -521,7 +547,7 @@ public class DataInitializer {
         .foto("url/to/foto3.jpg")
         .estado(true)
         .build();
-    
+        createUserForVeterinario(vet3, veterinarioRole);
     Veterinario vet4 = Veterinario.builder()
         .nombre("Laura García")
         .correo("correo23@gmail.com")
@@ -530,7 +556,8 @@ public class DataInitializer {
         .foto("url/to/foto4.jpg")
         .estado(true)
         .build();
-    
+        createUserForVeterinario(vet4, veterinarioRole);
+        
         veterinarioRepository.save(vet1);
         veterinarioRepository.save(vet2);
         veterinarioRepository.save(vet3);
@@ -574,13 +601,17 @@ public class DataInitializer {
         tratamientoRepository.save(tratamiento9);
         tratamientoRepository.save(tratamiento10);
 
-            Administrador admin = new Administrador();
-            admin.setNombre("Samuel");
-            admin.setCorreo("samuel@example.com");
-            admin.setContrasena("12345"); 
-            admin.setTelefono("1234567890");
-            
-            administradorRepository.save(admin);
+        Administrador admin = new Administrador();
+        admin.setNombre("Samuel");
+        admin.setCorreo("samuel@example.com");
+        admin.setContrasena("12345"); // Aquí podrías encriptar la contraseña si es necesario
+        admin.setTelefono("1234567890");
+        
+        // Guarda el Administrador en la base de datos
+        administradorRepository.save(admin);
+        
+        // Crea un UserEntity asociado al administrador y asigna el rol ADMINISTRADOR
+        createUserForAdmin(admin, administradorRole);
         };
 
     }
@@ -631,7 +662,37 @@ public class DataInitializer {
         }
     }
     
+        private void createUserForOwner(Owner owner, Role role) {
+        UserEntity user = new UserEntity();
+        user.setUsername(owner.getCedula());
+        user.setPassword("defaultPassword");
+        user.setEmail(owner.getCorreo());
+        user.getRoles().add(role); // Asigna el rol ya persistido
+        userRepository.save(user);
+        }  
 
+        private void createUserForAdmin(Administrador admin, Role administradorRole) {
+            UserEntity userAdmin = new UserEntity();
+            userAdmin.setUsername(admin.getCorreo()); // Usar el correo como nombre de usuario
+            userAdmin.setPassword(admin.getContrasena()); // Contraseña en texto plano, pero es mejor encriptarla
+            userAdmin.setEmail(admin.getCorreo());
+            userAdmin.getRoles().add(administradorRole); // Asigna el rol ADMINISTRADOR
+        
+            // Guarda el UserEntity en el repositorio de usuarios
+            userRepository.save(userAdmin);
+        }    
+
+        private void createUserForVeterinario(Veterinario veterinario, Role veterinarioRole) {
+            UserEntity userVet = new UserEntity();
+            userVet.setUsername(veterinario.getCorreo()); // Usa el correo como nombre de usuario
+            userVet.setPassword(veterinario.getContrasena()); // Considera encriptar esta contraseña
+            userVet.setEmail(veterinario.getCorreo());
+            userVet.getRoles().add(veterinarioRole); // Asigna el rol "VETERINARIO"
+        
+            // Guarda el UserEntity en el repositorio de usuarios
+            userRepository.save(userVet);
+        }
+        
 
 }
 

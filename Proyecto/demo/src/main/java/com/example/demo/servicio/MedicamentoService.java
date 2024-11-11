@@ -1,18 +1,19 @@
 package com.example.demo.servicio;
 
+import com.example.demo.dto.MedicamentoDTO;
 import com.example.demo.entidades.Medicamento;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface MedicamentoService {
-    List<Medicamento> getAllMedicamentos();
-    Optional<Medicamento> getMedicamentoById(Long id);
-    Medicamento createMedicamento(Medicamento medicamento);
-    Optional<Medicamento> updateMedicamento(Long id, Medicamento medicamentoDetails);
+    List<MedicamentoDTO> getAllMedicamentos();
+    Optional<MedicamentoDTO> getMedicamentoById(Long id);
+    MedicamentoDTO createMedicamento(Medicamento medicamento);
+    Optional<MedicamentoDTO> updateMedicamento(Long id, Medicamento medicamentoDetails);
     boolean deleteMedicamento(Long id);
-    List<Medicamento> searchMedicamentos(String query);
+    List<MedicamentoDTO> searchMedicamentos(String query);
     Double calcularVentasTotales();
     Double calcularGananciasTotales();
-    List<Medicamento> obtenerTopMedicamentos();
+    List<MedicamentoDTO> obtenerTopMedicamentos();
 }
