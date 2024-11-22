@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Dueño</title>
+    <link rel="stylesheet" href="/css/ownerDetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="Logo">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vet/portal">Portal Veterinario</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a class="boton" href="/owners">Volver</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <section class="owner-details">
+            <h2>Detalles del Dueño</h2>
+            <div class="details-card">
+                <p><i class="fas fa-user"></i> <strong>Nombre:</strong> <span th:text="${owner.nombre}"></span></p>
+                <p><i class="fas fa-id-card"></i> <strong>Cédula:</strong> <span th:text="${owner.cedula}"></span></p>
+                <p><i class="fas fa-envelope"></i> <strong>Correo:</strong> <span th:text="${owner.correo}"></span></p>
+                <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> <span th:text="${owner.celular}"></span></p>
+            </div>
+        </section>
+        <section>
+            <h3>Mascotas</h3>
+            <div class="pet-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Raza</th>
+                            <th>Imagen</th>
+                            <th>Edad</th>
+                            <th>Peso</th>
+                            <th>Enfermedad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pet : ${pets}">
+                            <td th:text="${pet.id}"></td>
+                            <td th:text="${pet.nombre}"></td>
+                            <td th:text="${pet.raza}"></td>
+                            <td><img th:src="${pet.imageUrl}" alt="Imagen de la Mascota"></td>
+                            <td th:text="${pet.edad} + ' años'"></td>
+                            <td th:text="${pet.peso} + ' kg'"></td>
+                            <td th:text="${pet.enfermedad}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="">Política de Privacidad</a> | <a href="">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- This HTML file is used to show an error message when a pet is not found -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Not Found</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/petError.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/images/pet_not_found.jpeg" alt="Pet Not Found" class="error-image">
+        <h1>Error: Mascota no encontrada</h1>
+        <h2 th:text="'Id = ' + ${Id}'"></h2>
+        <a href="/pets" class="btn btn-primary">Volver a la lista de mascotas</a>
+    </div>
+</body>
+</html>

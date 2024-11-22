@@ -1,0 +1,134 @@
+/* Estilo básico del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #A0A68A;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+nav ul.navbar {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul.navbar li {
+    margin: 0 15px;
+}
+
+nav ul.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul.navbar li a:hover {
+    background-color: #3e8e41;
+}
+
+/* Secciones principales */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around; /* Cambiar esto a space-between o aumentar los márgenes */
+    text-align: center;
+    gap: 20px; /* Añadir gap para espacio entre elementos */
+}
+
+.feature {
+    width: 30%; /* Asegúrate de que el ancho no ocupe todo el espacio disponible */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px; /* Añadir margen horizontal para más separación */
+}
+.feature-icon {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    color: #4CAF50;
+}
+
+footer {
+    background-color: #133840;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .footer-content {
+    margin-bottom: 10px;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  }
+  
+  .footer-content a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-social {
+    margin-top: 10px;
+  }
+  
+  .footer-social a {
+    color: #ffffff;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+  }
+  
+  .footer-social a:hover {
+    color: #f0f0f0;
+  }

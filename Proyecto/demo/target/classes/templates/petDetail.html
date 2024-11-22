@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles de Mascota</title>
+    <link rel="stylesheet" href="/css/petDetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #A0A68A">
+            <a class="navbar-brand" href="#">
+                <img src="/images/Logo.png" width="60" height="50" class="d-inline-block align-top" alt="">
+                <span class="brand-text">PetLand</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/vet/portal">Portal Veterinario</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="botones">
+                <a class="boton" href="/pets">Volver</a>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <h1>Detalles de la Mascota</h1>
+        <section class="pet-detail">
+            <div class="pet-detail-header">
+                <h2 th:text="${pet.nombre}"></h2>
+                <img th:src="${pet.imageUrl}" alt="Imagen Mascota" class="pet-image">
+            </div>
+            <div class="pet-detail-info">
+                <div class="info-item">
+                    <i class="fas fa-dog icon"></i>
+                    <p><strong>Raza:</strong> <span th:text="${pet.raza}"></span></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-calendar-alt icon"></i>
+                    <p><strong>Edad:</strong> <span th:text="${pet.edad}"></span> años</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-weight icon"></i>
+                    <p><strong>Peso:</strong> <span th:text="${pet.peso}"></span> kg</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-medkit icon"></i>
+                    <p><strong>Enfermedad:</strong> <span th:text="${pet.enfermedad}"></span></p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-heartbeat icon"></i>
+                    <p><strong>Estado:</strong> <span th:text="${pet.estado}"></span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 PetLand. Todos los derechos reservados.</p>
+            <p><a href="">Política de Privacidad</a> | <a href="">Términos de Servicio</a></p>
+        </div>
+        <div class="footer-social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
